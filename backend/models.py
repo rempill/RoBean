@@ -12,3 +12,12 @@ class CoffeeBean(BaseModel):
     url: HttpUrl
     image: HttpUrl | None=None
     variants: List[Variant]
+
+class LeaderboardEntry(BaseModel):
+    name: str
+    store: str
+    url: HttpUrl
+    image: HttpUrl | None = None
+    grams: int
+    price: float
+    price_per_gram: float

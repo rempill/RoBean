@@ -1,10 +1,9 @@
 from fastapi import FastAPI
+
 from tests.backend.shortScraper import test_scrape_embu_store
+from backend.api.beans import router as beans_router
 
 app = FastAPI()
-
-@app.get("/")
-async def read_root():
-    return {"Hello": "World"}
+app.include_router(beans_router,prefix="/beans")
 
 test_scrape_embu_store()
