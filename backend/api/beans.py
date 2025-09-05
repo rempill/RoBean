@@ -22,9 +22,9 @@ def fetch_beans(
     beans = fetch_cached_beans()
     if store:
         beans = [bean for bean in beans if bean.store.lower() == store.lower()]
-    if min_price:
+    if min_price is not None:
         beans = [bean for bean in beans if any(v.price >= min_price for v in bean.variants)]
-    if max_price:
+    if max_price is not None:
         beans = [bean for bean in beans if any(v.price <= max_price for v in bean.variants)]
     match sort_by:
         case "price":
