@@ -11,14 +11,15 @@ lets users filter and sort them, and highlights the cheapest beans per gram.
 
 ## 🛠 Tech Stack
 - Python (FastAPI, BeautifulSoup)
-- React (JavaScript, HTML, CSS)
-- In-memory caching (no database)
+- React+Vite(JavaScript, HTML, CSS, TailwindCSS, shadcn/ui)
+- In-memory caching (no database yet)
 
 ## 🎯 Learning Goals
 My first solo full-stack project, focused on:
 - Web scraping
 - API development
 - React frontend basics
+- UI design
 - Data normalization
 - Basic caching for performance
 
@@ -27,3 +28,5 @@ My first solo full-stack project, focused on:
 - Implement database caching with SQLite or Redis, replacing current caching  
 - Add user accounts and favorites  
 - Schedule automatic refreshes with Celery or CRON, replacing "refresh" logic
+- AI chatbot for help
+- Newsletter/Notification on product updates
