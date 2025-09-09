@@ -3,6 +3,9 @@
 A small full-stack project that fetches coffee bean products from multiple online stores,  
 lets users filter and sort them, and highlights the cheapest beans per gram.  
 
+## 📷 Snapshots (currently awaiting UI completions)
+<img width="2853" height="1470" alt="Screenshot 2025-09-06 141617" src="https://github.com/user-attachments/assets/2b60293f-f8f2-46b9-bc75-d99ee1e40b01" />
+
 ## 🚀 Features
 - Scrapes products from multiple coffee store websites (Python + BeautifulSoup)
 - FastAPI backend with filtering, sorting, and leaderboard endpoints
@@ -11,14 +14,15 @@ lets users filter and sort them, and highlights the cheapest beans per gram.
 
 ## 🛠 Tech Stack
 - Python (FastAPI, BeautifulSoup)
-- React (JavaScript, HTML, CSS)
-- In-memory caching (no database)
+- React+Vite(JavaScript, HTML, CSS, TailwindCSS, shadcn/ui)
+- In-memory caching (no database yet)
 
 ## 🎯 Learning Goals
 My first solo full-stack project, focused on:
 - Web scraping
 - API development
 - React frontend basics
+- UI design
 - Data normalization
 - Basic caching for performance
 
@@ -27,3 +31,5 @@ My first solo full-stack project, focused on:
 - Implement database caching with SQLite or Redis, replacing current caching  
 - Add user accounts and favorites  
 - Schedule automatic refreshes with Celery or CRON, replacing "refresh" logic
+- AI chatbot for help
+- Newsletter/Notification on product updates
