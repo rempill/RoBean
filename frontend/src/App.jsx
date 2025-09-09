@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
-//import SearchBar from '@/components/search-bar';
 import CoffeeCard from '@/components/coffee-card';
 
 function App() {
@@ -11,7 +10,6 @@ function App() {
 
   const filteredBeans=beans.filter(bean =>
       bean.name.toLowerCase().includes(query.toLowerCase()));
-
 
   useEffect(() => {
     fetch('/beans')  // FastAPI endpoint

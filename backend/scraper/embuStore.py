@@ -1,4 +1,6 @@
-import requests
+import asyncio
+
+import httpx
 from bs4 import BeautifulSoup
 from pydantic import HttpUrl
 
@@ -6,8 +8,9 @@ from ..models import CoffeeBean
 import json
 
 # Scrapes product variants from a product page
-def scrape_product_variant(product_url):
-    response=requests.get(product_url)
+async def scrape_product_variant(product_url):
+    async with httpx.AsyncClient() as client:
+        response= await client.get(product_url)
     soup=BeautifulSoup(response.text,'html.parser')
     script_tags=soup.find_all("script",type="application/ld+json")
     target_data=None
@@ -22,6 +25,7 @@ def scrape_product_variant(product_url):
     if not target_data:
         print(f"No variant data found in {product_url}")
         return []
+
     variants_data=target_data.get("hasVariant",[])
     boabe_variants=[]
     for variant in variants_data:
@@ -45,29 +49,32 @@ def scrape_product_variant(product_url):
 
 
 # Scrapes the Embu Coffee store for coffee beans
-def scrape_embu_store():
+async def scrape_embu_store():
     base_url="https://embu-coffee.ro"
     page_url=f"{base_url}/collections/all"
-    response= requests.get(page_url)
+    async with httpx.AsyncClient() as client:
+        response = await client.get(page_url)
     if response.status_code!= 200:
         print(f"Failed to retrieve page: {response.status_code}")
         return []
+
     soup = BeautifulSoup(response.text, 'html.parser')
     product_grid= soup.find("ul",id="product-grid")
     if not product_grid:
         print("No products found on the page.")
         return []
+
     product_items=product_grid.find_all("li",class_="grid__item")
     beans=[]
-    for product in product_items:
+    async def process_bean(product):
         name=product.select_one("h3.card__heading a").text.strip()
         url= product.select_one("h3.card__heading a")["href"]
         full_url=base_url+url
         image=product.select_one("img")["src"]
-        variants=scrape_product_variant(full_url)
+        variants=await scrape_product_variant(full_url)
         if not variants:
             print(f"No variants found for {full_url}")
-            continue
+            return
         beans.append(CoffeeBean(
             name=name,
             store="Embu Coffee",
@@ -75,5 +82,7 @@ def scrape_embu_store():
             image=HttpUrl("https:"+image) if image else None,
             variants=variants
         ))
+
+    await asyncio.gather(*(process_bean(p) for p in product_items))
     return beans
 

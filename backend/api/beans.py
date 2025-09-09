@@ -1,70 +1,46 @@
-from fastapi import APIRouter, Query
-from fastapi.encoders import jsonable_encoder
-from fastapi.responses import JSONResponse
-from typing import List, Optional
+import asyncio
 
-from ..scraper.embuStore import scrape_embu_store
-from ..utils import flatten_variants, fetch_cached_beans
-from ..cache import set_cached_beans, get_last_updated
+from asgiref.sync import sync_to_async
+from celery import Celery
+from fastapi import APIRouter, Depends
+from fastapi.responses import JSONResponse
+
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import select
+from sqlalchemy.orm import selectinload
+
+from ..db.database import get_db
+from ..db.models import Bean
+from ..db.schemas import BeansResponse
+
 
 router = APIRouter()
 
 
-@router.get("/beans")
+@router.get("/beans", response_model=BeansResponse)
 # Scrapes all stores for coffee beans
-def fetch_beans(
-        store: Optional[str] = None,
-        min_price: Optional[float] = None,
-        max_price: Optional[float] = None,
-        sort_by: Optional[str] = Query(None, enum=["price", "price_per_gram", "name"],
-                                       description="Sort by 'price' or 'price_per_gram' or alphabetical")
-):
-    beans = fetch_cached_beans()
-    if store:
-        beans = [bean for bean in beans if bean.store.lower() == store.lower()]
-    if min_price is not None:
-        beans = [bean for bean in beans if any(v.price >= min_price for v in bean.variants)]
-    if max_price is not None:
-        beans = [bean for bean in beans if any(v.price <= max_price for v in bean.variants)]
-    match sort_by:
-        case "price":
-            beans.sort(key=lambda x: min(v.price for v in x.variants))
-        case "price_per_gram":
-            beans.sort(key=lambda x: min(v.price_per_gram for v in x.variants))
-        case "name":
-            beans.sort(key=lambda x: x.name.lower())
-    response = {
-        "last_updated": get_last_updated(),
-        "beans": beans,
-        "count": len(beans)
-    }
-    return JSONResponse(content=jsonable_encoder(response))
+async def list_beans(db: AsyncSession = Depends(get_db)):
+    result = await db.execute(
+        select(Bean).options(
+            selectinload(Bean.store),
+            selectinload(Bean.variants),
+        )
+    )
+    beans = result.scalars().unique().all()
+    return {"beans": beans}
 
-
-@router.get("/leaderboard")
-# Returns a leaderboard of coffee beans based on price per gram, can use filters
-def leaderboard(
-        grams: Optional[List[int]] = Query(None),
-        top: int = 10
-):
-    beans = fetch_cached_beans()
-    lb_entries = flatten_variants(beans, grams_filter=grams)
-    lb_entries.sort(key=lambda x: x.price_per_gram)
-    lb_entries = lb_entries[:top]
-    response = {
-        "last_updated": get_last_updated(),
-        "entries": lb_entries,
-        "top": top
-    }
-    return JSONResponse(content=jsonable_encoder(response))
-
-
-@router.post("/refresh")
-
+"""@router.post("/refresh")
 def refresh_cache():
     beans= scrape_embu_store()
     set_cached_beans(beans)
     return JSONResponse({
         "message": "Cache refreshed successfully",
         "timestamp":get_last_updated()
-    })
+    })"""
+
+"""@router.get("/exec")
+async def exec_celery():
+    loop = asyncio.get_running_loop()
+    task = await loop.run_in_executor(None, lambda: refresh_db.delay())
+    return JSONResponse({"message":"Not implemented yet"})"""
+
