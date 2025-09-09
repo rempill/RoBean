@@ -9,13 +9,13 @@ lets users filter and sort them, and highlights the cheapest beans per gram.
 ## 🚀 Features
 - Scrapes products from multiple coffee store websites (Python + BeautifulSoup)
 - FastAPI backend with filtering, sorting, and leaderboard endpoints
-- Basic caching to improve speed
+- SQLite database + Celery and CRON automated caching
 - Simple React frontend for browsing and filtering products
 
 ## 🛠 Tech Stack
 - Python (FastAPI, BeautifulSoup)
 - React+Vite(JavaScript, HTML, CSS, TailwindCSS, shadcn/ui)
-- In-memory caching (no database yet)
+- SQLite,Celery,CRON
 
 ## 🎯 Learning Goals
 My first solo full-stack project, focused on:
@@ -28,8 +28,8 @@ My first solo full-stack project, focused on:
 
 ## 💡 Future Improvements
 - Add more coffee store scrapers  
-- Implement database caching with SQLite or Redis, replacing current caching  
+<del>- Implement database caching with SQLite or Redis, replacing current caching</del>
 - Add user accounts and favorites  
-- Schedule automatic refreshes with Celery or CRON, replacing "refresh" logic
+<del>- Schedule automatic refreshes with Celery or CRON, replacing "refresh" logic</del>
 - AI chatbot for help
 - Newsletter/Notification on product updates
