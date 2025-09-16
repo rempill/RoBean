@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import CoffeeCard from '@/components/coffee-card';
 
+
 function App() {
   const [beans, setBeans] = useState([]);
   const [loading, setLoading]= useState(true);
@@ -12,7 +13,8 @@ function App() {
       bean.name.toLowerCase().includes(query.toLowerCase()));
 
   useEffect(() => {
-    fetch('/beans')  // FastAPI endpoint
+      console.log(import.meta.env);
+    fetch(`${import.meta.env.VITE_API_URL}/beans`)  // FastAPI endpoint
       .then(res => {
         if(!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();

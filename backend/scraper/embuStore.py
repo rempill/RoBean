@@ -4,14 +4,12 @@ import httpx
 from bs4 import BeautifulSoup
 from pydantic import HttpUrl
 
-from ..models import CoffeeBean
+from models import CoffeeBean
 import json
 
 # Scrapes product variants from a product page
-async def scrape_product_variant(product_url):
-    async with httpx.AsyncClient() as client:
-        response= await client.get(product_url)
-    soup=BeautifulSoup(response.text,'html.parser')
+def parse_product_variant(html):
+    soup=BeautifulSoup(html,'html.parser')
     script_tags=soup.find_all("script",type="application/ld+json")
     target_data=None
     for tag in script_tags:
@@ -23,7 +21,6 @@ async def scrape_product_variant(product_url):
         except json.JSONDecodeError:
             continue
     if not target_data:
-        print(f"No variant data found in {product_url}")
         return []
 
     variants_data=target_data.get("hasVariant",[])
@@ -47,6 +44,13 @@ async def scrape_product_variant(product_url):
             })
     return boabe_variants
 
+async def scrape_product_variant(url):
+    async with httpx.AsyncClient() as client:
+        response = await client.get(url)
+    if response.status_code != 200:
+        print(f"Failed to retrieve product page: {response.status_code}")
+        return []
+    return parse_product_variant(response.text)
 
 # Scrapes the Embu Coffee store for coffee beans
 async def scrape_embu_store():

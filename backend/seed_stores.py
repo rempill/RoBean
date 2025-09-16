@@ -2,8 +2,8 @@ import asyncio
 
 from sqlalchemy import select
 
-from backend.db.database import SessionLocal, get_db_path, init_db
-from backend.db.models import Store
+from db.database import SessionLocal, get_db_path, init_db
+from db.models import Store
 
 stores = [
     {"name": "Embu", "url": "https://embu-coffee.ro/collections/all"},

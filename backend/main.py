@@ -1,9 +1,22 @@
 from fastapi import FastAPI
 
-from backend.api.beans import router as beans_router
-from backend.db.database import init_db, get_db_path
+from api.beans import router as beans_router
+from db.database import init_db, get_db_path
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+origins= [
+    "http://localhost" #default
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
 
 @app.on_event("startup")
 async def on_startup():

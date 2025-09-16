@@ -1,10 +1,10 @@
 import asyncio
 import inspect
 from sqlalchemy import select
-from .db.database import SessionLocal
-from .db.models import Store
-from .scraper import SCRAPERS
-from .db.crud import upsert_coffee_bean
+from db.database import SessionLocal
+from db.models import Store
+from scraper import SCRAPERS
+from db.crud import upsert_coffee_bean
 
 
 async def scrape_store(store, db):

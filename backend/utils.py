@@ -1,7 +1,7 @@
-from backend.models import CoffeeBean, LeaderboardEntry
+from models import CoffeeBean, LeaderboardEntry
 from typing import List, Optional
-from backend.cache import get_cached_beans, set_cached_beans
-from backend.scraper.embuStore import scrape_embu_store
+from cache import get_cached_beans, set_cached_beans
+from scraper.embuStore import scrape_embu_store
 
 # Utility function to flatten coffee bean variants into leaderboard entries
 def flatten_variants(

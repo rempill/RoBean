@@ -1,5 +1,5 @@
-from .crud import upsert_coffee_bean
-from ..models import CoffeeBean
+from crud import upsert_coffee_bean
+from models import CoffeeBean
 
 # Converts a CoffeeBean object to a database entry and saves it
 async def save_scraped_bean(db, store_id, scraped:CoffeeBean):

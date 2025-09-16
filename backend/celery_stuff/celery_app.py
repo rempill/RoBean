@@ -1,13 +1,14 @@
 from celery import Celery
-from ..run_scrapers import run_all_scrapers
-from ..db.database import SessionLocal
+from run_scrapers import run_all_scrapers
+from db.database import SessionLocal
 from asgiref.sync import async_to_sync
 from .config import beat_schedule, timezone
+import os
 
 celery = Celery(
     "robean",
-    broker="redis://localhost:6379/0",
-    backend="redis://localhost:6379/0"
+    broker=os.environ.get("CELERY_BROKER_URL", "redis://redis:6379/0"),
+    backend=os.environ.get("CELERY_RESULT_BACKEND", "redis://redis:6379/0")
 )
 
 celery.conf.beat_schedule = beat_schedule
