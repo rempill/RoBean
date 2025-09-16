@@ -8,7 +8,10 @@ export default defineConfig({
   plugins: [react(),tailwind()],
   server: {
     proxy: {
-      '/beans': 'http://localhost:8000', // Proxy to FastAPI backend root
+        '/beans': 'http://localhost:8000', // Proxy to FastAPI backend root
+    },
+    watch:{
+        usePolling: true
     }
   },
   resolve: {
