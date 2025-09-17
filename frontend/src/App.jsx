@@ -66,7 +66,7 @@ function App() {
                     className="grid gap-6 [grid-template-columns:repeat(auto-fill,minmax(220px,1fr))]"
                 >
                   {filteredBeans.map(bean => (
-                      <CoffeeCard key={bean.name} name={bean.name} imageUrl={bean.image}/>
+                      <CoffeeCard key={bean.id} name={bean.name} imageUrl={bean.image}/>
                   ))}
                 </section>
             )

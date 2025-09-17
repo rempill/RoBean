@@ -1,0 +1,23 @@
+# Ignore files not needed in the Docker image
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VCS
+.git
+.gitignore
+
+# Env and local config
+.env
+.env.*
+
+# DB and runtime artifacts
+*.db
+robean.db
+celerybeat-schedule*
+celerybeat.pid
+
+# Tests and fixtures (kept out of runtime image)
+tests/
+

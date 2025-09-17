@@ -1,0 +1,18 @@
+# Keep Docker context small for frontend builds
+node_modules/
+dist/
+.cache/
+
+# VCS
+.git
+.gitignore
+
+# Env and local config
+.env
+.env.*
+.npmrc
+
+# OS/editor junk
+.DS_Store
+*.log
+

@@ -7,7 +7,10 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 origins= [
-    "http://localhost" #default
+    "http://localhost",  # default
+    "http://127.0.0.1",  # allow root on port 80
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
 ]
 
 app.add_middleware(
@@ -21,7 +24,6 @@ app.add_middleware(
 @app.on_event("startup")
 async def on_startup():
     await init_db()
-
 @app.get("/")
 async def health():
     return {"status": "ok", "db": str(get_db_path())}

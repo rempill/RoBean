@@ -1,4 +1,4 @@
-from scraper.embuStore import scrape_embu_store
+from .embu_store import scrape_embu_store
 
 # Map DB store.name -> scraper function
 SCRAPERS = {

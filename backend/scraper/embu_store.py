@@ -4,7 +4,7 @@ import httpx
 from bs4 import BeautifulSoup
 from pydantic import HttpUrl
 
-from models import CoffeeBean
+from scraper.schemas import CoffeeBean
 import json
 
 # Scrapes product variants from a product page

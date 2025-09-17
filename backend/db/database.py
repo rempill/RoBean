@@ -23,3 +23,4 @@ async def init_db():
 def get_db_path():
     return DB_PATH
 
+
