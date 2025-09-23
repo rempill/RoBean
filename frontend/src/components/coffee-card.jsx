@@ -10,9 +10,7 @@ export function CoffeeCard({ name, imageUrl }) {
         hover:-translate-y-1 hover:shadow-lg
         motion-reduce:transition-none motion-reduce:hover:transform-none
         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring
-        w-40 h-52      /* small screens */
-        sm:w-48 sm:h-60 /* medium screens */
-        md:w-56 md:h-64 /* large screens */
+        w-full aspect-[3/4]   /* responsive, keeps ratio */
       "
       tabIndex={0}
     >
@@ -37,7 +35,7 @@ export function CoffeeCard({ name, imageUrl }) {
       </div>
 
       {/* Name */}
-      <div className="border-t bg-card flex items-center justify-center px-2 py-2 sm:px-3 sm:py-3 h-1/4">
+      <div className="border-t bg-card flex items-center justify-center px-2 py-2 sm:px-3 sm:py-3 h-1/4"  title={name}>
         <span className="text-sm sm:text-base font-semibold text-foreground text-center truncate">
           {name}
         </span>
@@ -45,5 +43,6 @@ export function CoffeeCard({ name, imageUrl }) {
     </Card>
   );
 }
+
 
 export default CoffeeCard;
