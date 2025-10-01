@@ -13,7 +13,6 @@ function App() {
         bean.name.toLowerCase().includes(query.toLowerCase()));
 
     useEffect(() => {
-        console.log(import.meta.env);
         fetch(`${import.meta.env.VITE_API_URL}/beans`)  // FastAPI endpoint
             .then(res => {
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);

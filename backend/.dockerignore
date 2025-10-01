@@ -9,7 +9,7 @@ __pycache__/
 .gitignore
 
 # Env and local config
-.env
+#.env
 .env.*
 
 # DB and runtime artifacts

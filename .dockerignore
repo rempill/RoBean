@@ -9,7 +9,6 @@
 **/.venv
 **/.classpath
 **/.dockerignore
-**/.env
 **/.git
 **/.gitignore
 **/.project
@@ -32,3 +31,13 @@
 **/values.dev.yaml
 LICENSE
 README.md
+# DB and runtime artifacts
+backend/*.db
+backend/celerybeat-schedule*
+backend/celerybeat.pid
+backend/.env.*
+frontend/*.log
+backend/.dockerignore
+frontend/.dockerignore
+frontend/.env.*
+

@@ -207,12 +207,11 @@ marimo/_lsp/
 __marimo__/
 
 # SQLite databases
-*.db
-backend/robean.db
+backend/*.db
 
 # Celery runtime files
-celerybeat-schedule*
-celerybeat.pid
+**/celerybeat-schedule*
+**/celerybeat.pid
 
 # IDE settings
 .idea/

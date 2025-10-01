@@ -7,8 +7,6 @@ dist/
 .git
 .gitignore
 
-# Env and local config
-.env
 .env.*
 .npmrc
 

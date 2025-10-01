@@ -7,6 +7,7 @@ from db.models import Store
 
 stores = [
     {"name": "Embu", "url": "https://embu-coffee.ro/collections/all"},
+    {"name": "Meron", "url": "https://meron.ro/categorie-produs/cafea"}
 ]
 
 async def main():
