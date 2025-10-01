@@ -5,9 +5,11 @@ lets users filter and sort them, and highlights the cheapest beans per gram.
 
 ## 📷 Snapshots (currently awaiting UI completions)
 Desktop
+
 <img width="600" alt="screenshot-1759325807377" src="https://github.com/user-attachments/assets/10974fc8-a71e-46da-9b7f-e7b5244dd993" />
 
 Mobile (Samsung Galaxy S20 Ultra)
+
 <img width="200" alt="screenshot-1759325868903" src="https://github.com/user-attachments/assets/d147e5b7-f7aa-45ea-b465-2c1f93bb46a4" />
 
 # Setup
