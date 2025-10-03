@@ -17,7 +17,7 @@ Have Docker installed and run the following command:
 ```bash
 docker-compose up -d --build
 ```
-Then, access [localhost](http://localhost).
+Then, navigate to backend/.env.example and frontend/.env.example and delete the ".example" parts. Finally, access [localhost](http://localhost).
 
 ## 🚀 Features
 - Scrapes products from multiple coffee store websites (Python + BeautifulSoup)
