@@ -33,12 +33,14 @@ function App() {
                 <div className="flex flex-wrap items-center justify-center lg:justify-between">
                     {/* Left: Logo + Title + Tagline */}
                     <div className="flex flex-col">
+                        <a href="">
                         <div className="flex items-center gap-4">
                             <img src={'/logo.png'} alt="RoBean Logo" className="h-10 w-10"/>
                             <h1 className="text-4xl font-extrabold tracking-tight text-stone-900">
                                 RoBean
                             </h1>
                         </div>
+                        </a>
                         <p className="text-stone-600 mt-1">Search Smarter, Sip Better Coffee</p>
                     </div>
 

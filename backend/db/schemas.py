@@ -10,7 +10,7 @@ class StoreOut(BaseModel):
 
 class VariantOut(BaseModel):
     grams: int
-    price: int
+    price: float
     price_per_gram: float | None = None
     class Config:
         from_attributes = True

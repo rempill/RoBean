@@ -14,6 +14,7 @@ async def upsert_coffee_bean(db: AsyncSession, data: dict, variants: list[dict])
     if bean:
         # Update simple fields
         bean.name = data["name"]
+        bean.price = data["price"]
         bean.image = data.get("image")
         await db.execute(delete(Variant).where(Variant.bean_id == bean.id))
     else:

@@ -30,7 +30,7 @@ class Variant(Base):
     __tablename__="variants"
     id:Mapped[int]=mapped_column(primary_key=True)
     grams:Mapped[int]=mapped_column(Integer,nullable=False)
-    price:Mapped[int]=mapped_column(Integer,nullable=False)
+    price:Mapped[float]=mapped_column(Float,nullable=False)
     price_per_gram:Mapped[float]=mapped_column(Float,nullable=True)
     bean_id:Mapped[int]=mapped_column(ForeignKey("beans.id"))
     bean:Mapped["Bean"]=relationship(back_populates="variants")
