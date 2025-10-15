@@ -20,7 +20,6 @@ async def scrape_store(store, db):
             "image": str(bean.image) if getattr(bean, "image", None) else None,
         }
         variants = [v.model_dump() for v in bean.variants]
-        print(bean_data)
         await upsert_coffee_bean(db, bean_data, variants)
 
 

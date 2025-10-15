@@ -1,7 +1,8 @@
-from sqlalchemy import String,Integer,Boolean,ForeignKey,DateTime,Text,UniqueConstraint, Float
+from sqlalchemy import String,Integer,Boolean,ForeignKey,DateTime,Text,UniqueConstraint, Float, Numeric
 from sqlalchemy.orm import Mapped,mapped_column,relationship
 from datetime import datetime,timezone
 from .database import Base
+from decimal import Decimal
 
 def now_utc():
     return datetime.now(timezone.utc)
@@ -30,7 +31,7 @@ class Variant(Base):
     __tablename__="variants"
     id:Mapped[int]=mapped_column(primary_key=True)
     grams:Mapped[int]=mapped_column(Integer,nullable=False)
-    price:Mapped[float]=mapped_column(Float,nullable=False)
-    price_per_gram:Mapped[float]=mapped_column(Float,nullable=True)
+    price:Mapped[Decimal]=mapped_column(Numeric(10,2),nullable=True)
+    price_per_gram:Mapped[Decimal]=mapped_column(Numeric(10,3),nullable=True)
     bean_id:Mapped[int]=mapped_column(ForeignKey("beans.id"))
     bean:Mapped["Bean"]=relationship(back_populates="variants")

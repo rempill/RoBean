@@ -4,24 +4,23 @@ from sqlalchemy import select
 from sqlalchemy.orm import selectinload
 
 from db.database import get_db
-from db.models import Bean
-from db.schemas import BeansResponse
+from db.models import Bean,Store
+from db.schemas import Response
 
 
 router = APIRouter()
 
 
-@router.get("/beans", response_model=BeansResponse)
+@router.get("/beans", response_model=Response)
 # Scrapes all stores for coffee beans
 async def list_beans(db: AsyncSession = Depends(get_db)):
     result = await db.execute(
-        select(Bean).options(
-            selectinload(Bean.store),
-            selectinload(Bean.variants),
+        select(Store).options(
+            selectinload(Store.beans).selectinload(Bean.variants)
         )
     )
-    beans = result.scalars().unique().all()
-    return {"beans": beans}
+    stores = result.scalars().unique().all()
+    return {"stores": stores}
 
 # Legacy endpoints (disabled)
 # @router.post("/refresh")
