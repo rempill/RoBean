@@ -6,11 +6,12 @@ lets users filter and sort them, and highlights the cheapest beans per gram.
 ## 📷 Snapshots (currently awaiting UI completions)
 Desktop
 
-<img width="600" alt="screenshot-1759325807377" src="https://github.com/user-attachments/assets/10974fc8-a71e-46da-9b7f-e7b5244dd993" />
+<img width="600" alt="screenshot-1759325807377" src="https://github.com/user-attachments/assets/0616e8b0-b85c-433a-9ced-b652e6c5bd7a" />
 
-Mobile (Samsung Galaxy S20 Ultra)
+Mobile (iPhone 12 Pro)
 
-<img width="200" alt="screenshot-1759325868903" src="https://github.com/user-attachments/assets/d147e5b7-f7aa-45ea-b465-2c1f93bb46a4" />
+
+<img width="200" alt="screenshot-1759325868903" src="https://github.com/user-attachments/assets/9e868220-b70a-45fd-85de-3421e26bb6c5" />
 
 # Setup
 Have Docker installed and run the following command:
