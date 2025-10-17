@@ -7,6 +7,8 @@ import path from 'node:path'
 export default defineConfig({
   plugins: [react(),tailwind()],
   server: {
+      host: true,
+      port:5173,
     proxy: {
         '/beans': 'http://localhost:8000', // Proxy to FastAPI backend root
     },

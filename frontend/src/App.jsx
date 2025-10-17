@@ -76,7 +76,7 @@ function App() {
             )}
 
             {!loading && !error && totalBeans > 0 && (
-                <div className="flex flex-col justify-center gap-8 w-full max-w-screen-xl mx-auto">
+                <div className="flex flex-col px-2 sm:px-4 lg:px-8 justify-center gap-8 w-full max-w mx-auto">
                     {filteredStores.map(store => (
                         <section key={store.id} className="w-full">
                             <div className="flex items-center justify-between mb-2">
@@ -98,14 +98,12 @@ function App() {
                                     const minPrice = prices.length ? Math.min(...prices) : undefined;
 
                                     return (
-                                        <a key={bean.id} href={bean.url}>
-                                            <div className="flex-shrink-0 w-[140px] sm:w-[180px] md:w-[200px]">
+                                        <a key={bean.id} href={bean.url} className="flex-shrink-0 w-[140px] sm:w-[180px] md:w-[200px]">
                                                 <CoffeeCard
                                                     name={bean.name}
                                                     imageUrl={bean.image}
                                                     minPrice={minPrice}
                                                 />
-                                            </div>
                                         </a>
                                     );
                                 })}

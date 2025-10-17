@@ -15,14 +15,14 @@ export function CoffeeCard({name, imageUrl, minPrice}) {
             tabIndex={0}
         >
             {/* Image */}
-            <div className="relative w-full h-3/4">
+            <div className="relative w-full aspect-[3/4]">
                 {imageUrl ? (
                     <img
                         src={imageUrl}
                         alt={name}
                         loading="lazy"
                         className="
-              h-full w-full object-cover
+              absolute inset-0 h-full w-full object-cover
               transform-gpu transition-transform duration-300 ease-out will-change-transform
               group-hover:scale-[1.03]
             "
@@ -42,7 +42,7 @@ export function CoffeeCard({name, imageUrl, minPrice}) {
                     {name}
                 </span>
                 {minPrice && (
-                    <span className="text-xs sm:text-sm text-muted-foreground mt-0.5">
+                    <span className="text-[11px] sm:text-sm text-muted-foreground mt-0.5 line-clamp-1">
                         Starting at {minPrice.toFixed(2)} RON
                     </span>
                 )}

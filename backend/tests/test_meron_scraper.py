@@ -12,11 +12,8 @@ class MockResponse:
         self.status_code = 200
 
 async def get_side_effect(url,*args, **kwargs):
-    if url.endswith("/categorie-produs/cafea/"):
-        with open("backend/tests/fixtures/meron.html") as f:
-            return MockResponse(f.read())
-    elif "best-of-panama-box" in url:
-        with open("backend/tests/fixtures/meron_box.html") as f:
+    if url.endswith("per_page=100"):
+        with open("backend/tests/fixtures/meron_products.json", "r", encoding="utf-8") as f:
             return MockResponse(f.read())
     return MockResponse("")
 
@@ -27,33 +24,42 @@ def test_scrape_meron_store(mock_get):
 
     assert len(beans)==4
     bean_names=[bean.name for bean in beans]
-    assert "Best of Panama – Box" in bean_names
-    assert "Brazil Sarava" in bean_names
-    assert "Kune - House Blend" in bean_names
-    assert "Kune - Brazilia" in bean_names
-    assert "Meron Card" not in bean_names
+    assert "Colombia Las Flores" in bean_names
+    assert "Colombia Rodrigo Sanchez" in bean_names
+    assert "Kune Colombia" in bean_names
+    assert "Kune Blend" in bean_names
+    assert "Kune House Blend" not in bean_names
+    assert "Meron Online Gift Card" not in bean_names
+    assert "Best of Panama Box" not in bean_names
     for bean in beans:
-        if bean.name=="Best of Panama – Box":
-            assert len(bean.variants)==1
-            first_variant=bean.variants[0]
-            assert first_variant.grams==240
-            assert first_variant.price==380.0
-            assert first_variant.price_per_gram==1.583
-        elif bean.name=="Brazil Sarava":
-            assert len(bean.variants)==2
-            variant_1kg=next((v for v in bean.variants if v.grams==1000), None)
-            assert variant_1kg is not None
-            assert variant_1kg.price==189.0
-            assert variant_1kg.price_per_gram==0.189
-        elif bean.name=="Kune - House Blend":
-            assert len(bean.variants)==3
-            variant_250g=next((v for v in bean.variants if v.grams==250), None)
-            assert variant_250g is not None
-            assert variant_250g.price==52.0
-            assert variant_250g.price_per_gram==0.208
-        elif bean.name=="Kune - Brazilia":
-            assert len(bean.variants)==1
-            variant_250g=next((v for v in bean.variants if v.grams==250), None)
-            assert variant_250g is not None
-            assert variant_250g.price==51.0
-            assert variant_250g.price_per_gram==0.204
+        match bean.name:
+            case "Colombia Las Flores":
+                assert len(bean.variants)==2
+                variant_250g=next((v for v in bean.variants if v.grams==250), None)
+                assert variant_250g is not None
+                assert variant_250g.price==77.0
+                assert variant_250g.price_per_gram==0.308
+                assert str(bean.url)=="https://meron.ro/?s=Colombia+Las+Flores&post_type=product"
+            case "Colombia Rodrigo Sanchez":
+                assert len(bean.variants)==1
+                only_variant=bean.variants[0]
+                assert only_variant.grams==250
+                assert only_variant.price==100.0
+                assert only_variant.price_per_gram==0.4
+                assert str(bean.url)=="https://meron.ro/produs/colombia-rodrigo-sanchez-250g-bourbon-sidra-spalata/"
+            case "Kune Colombia":
+                assert len(bean.variants)==3
+                variant_500g=next((v for v in bean.variants if v.grams==500), None)
+                assert variant_500g is not None
+                assert variant_500g.price==99.0
+                assert variant_500g.price_per_gram==0.198
+                assert str(bean.url)=="https://meron.ro/?s=Kune+Colombia&post_type=product"
+            case "Kune Blend":
+                assert len(bean.variants)==2
+                variant_1kg=next((v for v in bean.variants if v.grams==1000), None)
+                assert variant_1kg is not None
+                assert variant_1kg.price==180.0
+                assert variant_1kg.price_per_gram==0.18
+                assert str(bean.url)=="https://meron.ro/?s=Kune+Blend&post_type=product"
+            case _:
+                assert False, f"Unexpected bean name: {bean.name}"
