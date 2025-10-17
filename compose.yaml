@@ -22,7 +22,6 @@ services:
     volumes:
         - ./frontend:/app
         - /app/node_modules
-    command: npm run dev
 
   redis:
     image: redis:7

@@ -11,15 +11,10 @@ class MockResponse:
 
 
 async def get_side_effect(url, *args, **kwargs):
-    if url.endswith("/collections/all"):
-        with open("backend/tests/fixtures/embu.html") as f:
+    if url.endswith("products.json"):
+        with open("backend/tests/fixtures/embu_products.json", "r", encoding="utf-8") as f:
             return MockResponse(f.read())
-    elif "brazilia-f1" in url:
-        with open("backend/tests/fixtures/embu_braziliaF1.html") as f:
-            return MockResponse(f.read())
-    elif "ethiopia-guji" in url:
-        with open("backend/tests/fixtures/embu_ethiopiaGuji.html") as f:
-            return MockResponse(f.read())
+
     return MockResponse("")
 
 

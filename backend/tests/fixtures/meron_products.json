@@ -1,0 +1,1960 @@
+[
+  {
+    "id": 33772,
+    "name": "Colombia Las Flores 250g | Yellow Bourbon | Naturală anaerobă",
+    "slug": "colombia-las-flores-250g-yellow-bourbon-naturala-anaeroba",
+    "parent": 0,
+    "type": "variable",
+    "variation": "",
+    "permalink": "https://meron.ro/produs/colombia-las-flores-250g-yellow-bourbon-naturala-anaeroba/",
+    "sku": "1032025-1",
+    "short_description": "\u003Cp\u003ENote de degustare: afine, praline de ciocolată și vin roșu\u003C/p\u003E",
+    "description": "\u003Cp data-start=\"0\" data-end=\"369\"\u003E\u003Cstrong data-start=\"0\" data-end=\"23\"\u003EColombia Las Flores\u003C/strong\u003E este o cafea de origine din \u003Cstrong data-start=\"52\" data-end=\"64\"\u003EColombia\u003C/strong\u003E, cultivată în regiunea \u003Cstrong data-start=\"88\" data-end=\"106\"\u003EHuila, Acevedo\u003C/strong\u003E, la o altitudine de \u003Cstrong data-start=\"127\" data-end=\"137\"\u003E1750 m\u003C/strong\u003E. Este produsă de \u003Cstrong data-start=\"155\" data-end=\"172\" data-is-only-node=\"\"\u003EJohan Vergara\u003C/strong\u003E la ferma \u003Cstrong data-start=\"182\" data-end=\"196\"\u003ELas Flores\u003C/strong\u003E, din soiul \u003Cstrong data-start=\"211\" data-end=\"240\"\u003EYellow Bourbon\u003C/strong\u003E. Procesarea este \u003Cstrong data-start=\"258\" data-end=\"279\"\u003Enatural anaerobic\u003C/strong\u003E, iar profilul aromatic evidențiază note de \u003Cstrong data-start=\"323\" data-end=\"366\"\u003Eafine, praline de ciocolată și vin roșu\u003C/strong\u003E.\u003C/p\u003E\n\u003Cp data-start=\"371\" data-end=\"624\"\u003EAceasta este o cafea de specialitate, 100% Arabica, crescută cu grijă într-o zonă geografică bine definită, culeasă manual, selectată, procesată și prăjită în loturi mici, pentru a evidenția caracteristicile unice ale originii și metodei de procesare.\u003C/p\u003E\n\u003Cp data-start=\"626\" data-end=\"787\"\u003E\u003Cstrong data-start=\"626\" data-end=\"638\"\u003ELivrare:\u003C/strong\u003E Livrăm în România de luni până vineri, prin curierat rapid, în termen de 2–4 zile lucrătoare. La comenzi de peste 200 lei, livrarea este gratuită.\u003C/p\u003E",
+    "on_sale": false,
+    "prices": {
+      "price": "7700",
+      "regular_price": "7700",
+      "sale_price": "7700",
+      "price_range": null,
+      "currency_code": "RON",
+      "currency_symbol": "lei",
+      "currency_minor_unit": 2,
+      "currency_decimal_separator": ".",
+      "currency_thousand_separator": ",",
+      "currency_prefix": "",
+      "currency_suffix": " lei"
+    },
+    "price_html": "\u003Cspan class=\"woocs_price_code\" data-currency=\"\" data-redraw-id=\"68f0ecf23e3ee\" data-product-id=\"33772\"\u003E\u003Cspan class=\"woocommerce-Price-amount amount\"\u003E77.00&nbsp;\u003Cspan class=\"woocommerce-Price-currencySymbol\"\u003Elei\u003C/span\u003E\u003C/span\u003E\u003C/span\u003E",
+    "average_rating": "0",
+    "review_count": 0,
+    "images": [
+      {
+        "id": 33882,
+        "src": "https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-250g.jpg",
+        "thumbnail": "https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-250g-430x430.jpg",
+        "srcset": "https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-250g.jpg 1500w, https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-250g-300x300.jpg 300w, https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-250g-800x800.jpg 800w, https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-250g-150x150.jpg 150w, https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-250g-768x768.jpg 768w, https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-250g-430x430.jpg 430w, https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-250g-700x700.jpg 700w, https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-250g-100x100.jpg 100w",
+        "sizes": "(max-width: 1500px) 100vw, 1500px",
+        "name": "Colombia Las Flores 250g",
+        "alt": ""
+      }
+    ],
+    "categories": [
+      {
+        "id": 864,
+        "name": "ro",
+        "slug": "ro",
+        "link": "https://meron.ro/categorie-produs/ro/"
+      }
+    ],
+    "tags": [
+      {
+        "id": 456,
+        "name": "single_origin",
+        "slug": "single_origin-ro",
+        "link": "https://meron.ro/eticheta-produs/single_origin-ro/"
+      }
+    ],
+    "brands": [],
+    "attributes": [
+      {
+        "id": 4,
+        "name": "Măcinătură",
+        "taxonomy": "pa_macinatura",
+        "has_variations": true,
+        "terms": [
+          {
+            "id": 118,
+            "name": "Aeropress",
+            "slug": "aeropress"
+          },
+          {
+            "id": 119,
+            "name": "Boabe",
+            "slug": "boabe"
+          },
+          {
+            "id": 120,
+            "name": "Cold Brew",
+            "slug": "cold-brew"
+          },
+          {
+            "id": 121,
+            "name": "Espresso",
+            "slug": "espresso"
+          },
+          {
+            "id": 122,
+            "name": "Filtru manual",
+            "slug": "filtru-manual"
+          },
+          {
+            "id": 123,
+            "name": "French Press",
+            "slug": "french-press"
+          },
+          {
+            "id": 124,
+            "name": "Ibric",
+            "slug": "ibric"
+          },
+          {
+            "id": 125,
+            "name": "Moka pot",
+            "slug": "moka-pot"
+          }
+        ]
+      }
+    ],
+    "variations": [
+      {
+        "id": 33773,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "aeropress"
+          }
+        ]
+      },
+      {
+        "id": 33774,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "boabe"
+          }
+        ]
+      },
+      {
+        "id": 33775,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "cold-brew"
+          }
+        ]
+      },
+      {
+        "id": 33776,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "espresso"
+          }
+        ]
+      },
+      {
+        "id": 33777,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "filtru-manual"
+          }
+        ]
+      },
+      {
+        "id": 33778,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "french-press"
+          }
+        ]
+      },
+      {
+        "id": 33779,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "ibric"
+          }
+        ]
+      },
+      {
+        "id": 33780,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "moka-pot"
+          }
+        ]
+      }
+    ],
+    "grouped_products": [],
+    "has_options": true,
+    "is_purchasable": true,
+    "is_in_stock": true,
+    "is_on_backorder": false,
+    "low_stock_remaining": null,
+    "stock_availability": {
+      "text": "",
+      "class": ""
+    },
+    "sold_individually": false,
+    "add_to_cart": {
+      "text": "Selectează opțiunile",
+      "description": "Selectează opțiunile pentru &bdquo;Colombia Las Flores 250g | Yellow Bourbon | Naturală anaerobă&rdquo;",
+      "url": "https://meron.ro/produs/colombia-las-flores-250g-yellow-bourbon-naturala-anaeroba/",
+      "minimum": 1,
+      "maximum": 9999,
+      "multiple_of": 1
+    },
+    "extensions": {
+
+    }
+  },
+    {
+    "id": 33793,
+    "name": "Colombia Las Flores 1000g | Yellow Bourbon | Naturală anaerobă",
+    "slug": "colombia-las-flores-1000g-yellow-bourbon-naturala-anaeroba",
+    "parent": 0,
+    "type": "variable",
+    "variation": "",
+    "permalink": "https://meron.ro/produs/colombia-las-flores-1000g-yellow-bourbon-naturala-anaeroba/",
+    "sku": "1032025-2",
+    "short_description": "\u003Cp\u003ENote de degustare: afine, praline de ciocolată și vin roșu\u003C/p\u003E",
+    "description": "\u003Cp data-start=\"0\" data-end=\"369\"\u003E\u003Cstrong data-start=\"0\" data-end=\"23\"\u003EColombia Las Flores\u003C/strong\u003E este o cafea de origine din \u003Cstrong data-start=\"52\" data-end=\"64\"\u003EColombia\u003C/strong\u003E, cultivată în regiunea \u003Cstrong data-start=\"88\" data-end=\"106\"\u003EHuila, Acevedo\u003C/strong\u003E, la o altitudine de \u003Cstrong data-start=\"127\" data-end=\"137\"\u003E1750 m\u003C/strong\u003E. Este produsă de \u003Cstrong data-start=\"155\" data-end=\"172\" data-is-only-node=\"\"\u003EJohan Vergara\u003C/strong\u003E la ferma \u003Cstrong data-start=\"182\" data-end=\"196\"\u003ELas Flores\u003C/strong\u003E, din soiul \u003Cstrong data-start=\"211\" data-end=\"240\"\u003EYellow Bourbon\u003C/strong\u003E. Procesarea este \u003Cstrong data-start=\"258\" data-end=\"279\"\u003Enatural anaerobic\u003C/strong\u003E, iar profilul aromatic evidențiază note de \u003Cstrong data-start=\"323\" data-end=\"366\"\u003Eafine, praline de ciocolată și vin roșu\u003C/strong\u003E.\u003C/p\u003E\n\u003Cp data-start=\"371\" data-end=\"624\"\u003EAceasta este o cafea de specialitate, 100% Arabica, crescută cu grijă într-o zonă geografică bine definită, culeasă manual, selectată, procesată și prăjită în loturi mici, pentru a evidenția caracteristicile unice ale originii și metodei de procesare.\u003C/p\u003E\n\u003Cp data-start=\"626\" data-end=\"787\"\u003E\u003Cstrong data-start=\"626\" data-end=\"638\"\u003ELivrare:\u003C/strong\u003E Livrăm în România de luni până vineri, prin curierat rapid, în termen de 2–4 zile lucrătoare. La comenzi de peste 200 lei, livrarea este gratuită.\u003C/p\u003E",
+    "on_sale": false,
+    "prices": {
+      "price": "29000",
+      "regular_price": "29000",
+      "sale_price": "29000",
+      "price_range": null,
+      "currency_code": "RON",
+      "currency_symbol": "lei",
+      "currency_minor_unit": 2,
+      "currency_decimal_separator": ".",
+      "currency_thousand_separator": ",",
+      "currency_prefix": "",
+      "currency_suffix": " lei"
+    },
+    "price_html": "\u003Cspan class=\"woocs_price_code\" data-currency=\"\" data-redraw-id=\"68f0ecf247666\" data-product-id=\"33793\"\u003E\u003Cspan class=\"woocommerce-Price-amount amount\"\u003E290.00&nbsp;\u003Cspan class=\"woocommerce-Price-currencySymbol\"\u003Elei\u003C/span\u003E\u003C/span\u003E\u003C/span\u003E",
+    "average_rating": "0",
+    "review_count": 0,
+    "images": [
+      {
+        "id": 9995,
+        "src": "https://meron.ro/wp-content/uploads/2022/09/punga_galbena_1kg_52.jpg",
+        "thumbnail": "https://meron.ro/wp-content/uploads/2022/09/punga_galbena_1kg_52-430x430.jpg",
+        "srcset": "https://meron.ro/wp-content/uploads/2022/09/punga_galbena_1kg_52.jpg 2000w, https://meron.ro/wp-content/uploads/2022/09/punga_galbena_1kg_52-430x430.jpg 430w, https://meron.ro/wp-content/uploads/2022/09/punga_galbena_1kg_52-100x100.jpg 100w, https://meron.ro/wp-content/uploads/2022/09/punga_galbena_1kg_52-700x700.jpg 700w",
+        "sizes": "(max-width: 2000px) 100vw, 2000px",
+        "name": "punga_galbena_1kg_52",
+        "alt": ""
+      },
+      {
+        "id": 33883,
+        "src": "https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-1kg.jpg",
+        "thumbnail": "https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-1kg-430x430.jpg",
+        "srcset": "https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-1kg.jpg 2000w, https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-1kg-300x300.jpg 300w, https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-1kg-800x800.jpg 800w, https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-1kg-150x150.jpg 150w, https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-1kg-768x768.jpg 768w, https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-1kg-1536x1536.jpg 1536w, https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-1kg-430x430.jpg 430w, https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-1kg-700x700.jpg 700w, https://meron.ro/wp-content/uploads/2025/10/Colombia-Las-Flores-1kg-100x100.jpg 100w",
+        "sizes": "(max-width: 2000px) 100vw, 2000px",
+        "name": "Colombia Las Flores 1kg",
+        "alt": ""
+      }
+    ],
+    "categories": [
+      {
+        "id": 864,
+        "name": "ro",
+        "slug": "ro",
+        "link": "https://meron.ro/categorie-produs/ro/"
+      }
+    ],
+    "tags": [
+      {
+        "id": 490,
+        "name": "yellow_1kg",
+        "slug": "yellow_1kg-ro",
+        "link": "https://meron.ro/eticheta-produs/yellow_1kg-ro/"
+      }
+    ],
+    "brands": [],
+    "attributes": [
+      {
+        "id": 4,
+        "name": "Măcinătură",
+        "taxonomy": "pa_macinatura",
+        "has_variations": true,
+        "terms": [
+          {
+            "id": 118,
+            "name": "Aeropress",
+            "slug": "aeropress"
+          },
+          {
+            "id": 119,
+            "name": "Boabe",
+            "slug": "boabe"
+          },
+          {
+            "id": 120,
+            "name": "Cold Brew",
+            "slug": "cold-brew"
+          },
+          {
+            "id": 121,
+            "name": "Espresso",
+            "slug": "espresso"
+          },
+          {
+            "id": 122,
+            "name": "Filtru manual",
+            "slug": "filtru-manual"
+          },
+          {
+            "id": 123,
+            "name": "French Press",
+            "slug": "french-press"
+          },
+          {
+            "id": 124,
+            "name": "Ibric",
+            "slug": "ibric"
+          },
+          {
+            "id": 125,
+            "name": "Moka pot",
+            "slug": "moka-pot"
+          }
+        ]
+      }
+    ],
+    "variations": [
+      {
+        "id": 33794,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "aeropress"
+          }
+        ]
+      },
+      {
+        "id": 33795,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "boabe"
+          }
+        ]
+      },
+      {
+        "id": 33796,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "cold-brew"
+          }
+        ]
+      },
+      {
+        "id": 33797,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "espresso"
+          }
+        ]
+      },
+      {
+        "id": 33798,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "filtru-manual"
+          }
+        ]
+      },
+      {
+        "id": 33799,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "french-press"
+          }
+        ]
+      },
+      {
+        "id": 33800,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "ibric"
+          }
+        ]
+      },
+      {
+        "id": 33801,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "moka-pot"
+          }
+        ]
+      }
+    ],
+    "grouped_products": [],
+    "has_options": true,
+    "is_purchasable": true,
+    "is_in_stock": true,
+    "is_on_backorder": false,
+    "low_stock_remaining": null,
+    "stock_availability": {
+      "text": "",
+      "class": ""
+    },
+    "sold_individually": false,
+    "add_to_cart": {
+      "text": "Selectează opțiunile",
+      "description": "Selectează opțiunile pentru &bdquo;Colombia Las Flores 1000g | Yellow Bourbon | Naturală anaerobă&rdquo;",
+      "url": "https://meron.ro/produs/colombia-las-flores-1000g-yellow-bourbon-naturala-anaeroba/",
+      "minimum": 1,
+      "maximum": 9999,
+      "multiple_of": 1
+    },
+    "extensions": {
+
+    }
+  },
+  {
+    "id": 33814,
+    "name": "Colombia Rodrigo Sanchez 250g | Bourbon Sidra | Spălată",
+    "slug": "colombia-rodrigo-sanchez-250g-bourbon-sidra-spalata",
+    "parent": 0,
+    "type": "variable",
+    "variation": "",
+    "permalink": "https://meron.ro/produs/colombia-rodrigo-sanchez-250g-bourbon-sidra-spalata/",
+    "sku": "2302-1",
+    "short_description": "\u003Cp\u003ENote de degustare: bomboane de portocale, măr verde și salvie\u003C/p\u003E",
+    "description": "\u003Cp data-start=\"0\" data-end=\"356\"\u003E\u003Cstrong data-start=\"0\" data-end=\"28\"\u003EColombia Rodrigo Sanchez\u003C/strong\u003E este o cafea de origine din \u003Cstrong data-start=\"57\" data-end=\"69\"\u003EColombia\u003C/strong\u003E, cultivată în regiunea \u003Cstrong data-start=\"93\" data-end=\"112\"\u003EHuila, Pitalito\u003C/strong\u003E, la o altitudine de \u003Cstrong data-start=\"133\" data-end=\"143\"\u003E1730 m\u003C/strong\u003E. Este produsă de \u003Cstrong data-start=\"161\" data-end=\"180\" data-is-only-node=\"\"\u003ERodrigo Sanchez\u003C/strong\u003E la ferma \u003Cstrong data-start=\"190\" data-end=\"201\"\u003ELa Loma\u003C/strong\u003E, din soiul \u003Cstrong data-start=\"213\" data-end=\"230\"\u003EBourbon Sidra\u003C/strong\u003E. Procesarea este \u003Cstrong data-start=\"248\" data-end=\"263\"\u003Espălată\u003C/strong\u003E, iar profilul aromatic evidențiază note de \u003Cstrong data-start=\"307\" data-end=\"353\"\u003Ebomboane de portocale, măr verde și salvie\u003C/strong\u003E.\u003C/p\u003E\n\u003Cp data-start=\"358\" data-end=\"611\"\u003EAceasta este o cafea de specialitate, 100% Arabica, crescută cu grijă într-o zonă geografică bine definită, culeasă manual, selectată, procesată și prăjită în loturi mici, pentru a evidenția caracteristicile unice ale originii și metodei de procesare.\u003C/p\u003E\n\u003Cp data-start=\"613\" data-end=\"774\"\u003E\u003Cstrong data-start=\"613\" data-end=\"625\"\u003ELivrare:\u003C/strong\u003E Livrăm în România de luni până vineri, prin curierat rapid, în termen de 2–4 zile lucrătoare. La comenzi de peste 200 lei, livrarea este gratuită.\u003C/p\u003E",
+    "on_sale": false,
+    "prices": {
+      "price": "10000",
+      "regular_price": "10000",
+      "sale_price": "10000",
+      "price_range": null,
+      "currency_code": "RON",
+      "currency_symbol": "lei",
+      "currency_minor_unit": 2,
+      "currency_decimal_separator": ".",
+      "currency_thousand_separator": ",",
+      "currency_prefix": "",
+      "currency_suffix": " lei"
+    },
+    "price_html": "\u003Cspan class=\"woocs_price_code\" data-currency=\"\" data-redraw-id=\"68f0ecf2507bc\" data-product-id=\"33814\"\u003E\u003Cspan class=\"woocommerce-Price-amount amount\"\u003E100.00&nbsp;\u003Cspan class=\"woocommerce-Price-currencySymbol\"\u003Elei\u003C/span\u003E\u003C/span\u003E\u003C/span\u003E",
+    "average_rating": "0",
+    "review_count": 0,
+    "images": [
+      {
+        "id": 33884,
+        "src": "https://meron.ro/wp-content/uploads/2025/10/COlombia-Rodrigo-Sanchez-250-g.jpg",
+        "thumbnail": "https://meron.ro/wp-content/uploads/2025/10/COlombia-Rodrigo-Sanchez-250-g-430x430.jpg",
+        "srcset": "https://meron.ro/wp-content/uploads/2025/10/COlombia-Rodrigo-Sanchez-250-g.jpg 1500w, https://meron.ro/wp-content/uploads/2025/10/COlombia-Rodrigo-Sanchez-250-g-300x300.jpg 300w, https://meron.ro/wp-content/uploads/2025/10/COlombia-Rodrigo-Sanchez-250-g-800x800.jpg 800w, https://meron.ro/wp-content/uploads/2025/10/COlombia-Rodrigo-Sanchez-250-g-150x150.jpg 150w, https://meron.ro/wp-content/uploads/2025/10/COlombia-Rodrigo-Sanchez-250-g-768x768.jpg 768w, https://meron.ro/wp-content/uploads/2025/10/COlombia-Rodrigo-Sanchez-250-g-430x430.jpg 430w, https://meron.ro/wp-content/uploads/2025/10/COlombia-Rodrigo-Sanchez-250-g-700x700.jpg 700w, https://meron.ro/wp-content/uploads/2025/10/COlombia-Rodrigo-Sanchez-250-g-100x100.jpg 100w",
+        "sizes": "(max-width: 1500px) 100vw, 1500px",
+        "name": "COlombia Rodrigo Sanchez 250 g",
+        "alt": ""
+      }
+    ],
+    "categories": [
+      {
+        "id": 864,
+        "name": "ro",
+        "slug": "ro",
+        "link": "https://meron.ro/categorie-produs/ro/"
+      }
+    ],
+    "tags": [
+      {
+        "id": 1003,
+        "name": "series",
+        "slug": "series-ro",
+        "link": "https://meron.ro/eticheta-produs/series-ro/"
+      },
+      {
+        "id": 456,
+        "name": "single_origin",
+        "slug": "single_origin-ro",
+        "link": "https://meron.ro/eticheta-produs/single_origin-ro/"
+      }
+    ],
+    "brands": [],
+    "attributes": [
+      {
+        "id": 4,
+        "name": "Măcinătură",
+        "taxonomy": "pa_macinatura",
+        "has_variations": true,
+        "terms": [
+          {
+            "id": 118,
+            "name": "Aeropress",
+            "slug": "aeropress"
+          },
+          {
+            "id": 119,
+            "name": "Boabe",
+            "slug": "boabe"
+          },
+          {
+            "id": 120,
+            "name": "Cold Brew",
+            "slug": "cold-brew"
+          },
+          {
+            "id": 121,
+            "name": "Espresso",
+            "slug": "espresso"
+          },
+          {
+            "id": 122,
+            "name": "Filtru manual",
+            "slug": "filtru-manual"
+          },
+          {
+            "id": 123,
+            "name": "French Press",
+            "slug": "french-press"
+          },
+          {
+            "id": 124,
+            "name": "Ibric",
+            "slug": "ibric"
+          },
+          {
+            "id": 125,
+            "name": "Moka pot",
+            "slug": "moka-pot"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Label",
+        "taxonomy": "pa_direct-trade-label",
+        "has_variations": false,
+        "terms": [
+          {
+            "id": 948,
+            "name": "EXCEPTIONAL SERIES",
+            "slug": "exceptional-series"
+          }
+        ]
+      }
+    ],
+    "variations": [
+      {
+        "id": 33815,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "aeropress"
+          }
+        ]
+      },
+      {
+        "id": 33816,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "boabe"
+          }
+        ]
+      },
+      {
+        "id": 33817,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "cold-brew"
+          }
+        ]
+      },
+      {
+        "id": 33818,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "espresso"
+          }
+        ]
+      },
+      {
+        "id": 33819,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "filtru-manual"
+          }
+        ]
+      },
+      {
+        "id": 33820,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "french-press"
+          }
+        ]
+      },
+      {
+        "id": 33821,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "ibric"
+          }
+        ]
+      },
+      {
+        "id": 33822,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "moka-pot"
+          }
+        ]
+      }
+    ],
+    "grouped_products": [],
+    "has_options": true,
+    "is_purchasable": true,
+    "is_in_stock": true,
+    "is_on_backorder": false,
+    "low_stock_remaining": null,
+    "stock_availability": {
+      "text": "",
+      "class": ""
+    },
+    "sold_individually": false,
+    "add_to_cart": {
+      "text": "Selectează opțiunile",
+      "description": "Selectează opțiunile pentru &bdquo;Colombia Rodrigo Sanchez 250g | Bourbon Sidra | Spălată&rdquo;",
+      "url": "https://meron.ro/produs/colombia-rodrigo-sanchez-250g-bourbon-sidra-spalata/",
+      "minimum": 1,
+      "maximum": 9999,
+      "multiple_of": 1
+    },
+    "extensions": {
+
+    }
+  },
+  {
+    "id": 33554,
+    "name": "Meron Online Gift Card",
+    "slug": "meron-online-gift-card",
+    "parent": 0,
+    "type": "pw-gift-card",
+    "variation": "",
+    "permalink": "https://meron.ro/produs/meron-online-gift-card/",
+    "sku": "111111999999111",
+    "short_description": "\u003Cp\u003EOfera cuiva drag cadoul ideal chiar daca nu stii exact ce isi doreste\u003C/p\u003E",
+    "description": "\u003Cp\u003E\u003Cstrong\u003ECARDUL POATE FI UTILIZAT EXCLUSIV PE MERON.RO\u003C/strong\u003E\u003C/p\u003E\n\u003Cp data-start=\"0\" data-end=\"211\"\u003EȘtii ce e grozav la un gift card? Poți oferi cadoul perfect chiar dacă nu știi exact ce își dorește. Poate alege o cafea single origin, o ceașcă artizanală sau o latieră pentru ciocolată caldă de specialitate.\u003C/p\u003E\n\u003Cp data-start=\"213\" data-end=\"323\" data-is-last-node=\"\" data-is-only-node=\"\"\u003EPe meron.ro găsești cafele din toată lumea, echipamente și alternative pentru iubitorii de produse artizanale.\u003C/p\u003E\n\u003Cp\u003E\u003Cstrong\u003ELivrare\u003C/strong\u003E: Cardul cadou se livrează electronic, prin e-mail, în termen de 1-3 zile lucrătoare de la procesarea comenzii de către un operator Meron.\u003C/p\u003E\n\u003Cp\u003E\u003Cstrong\u003EImportant\u003C/strong\u003E: Prin achiziția acestui card cadou, confirmi că ești de acord să primești conținut digital (cardul) imediat după procesarea comenzii de către operatorul Meron și îți pierzi dreptul legal de retragere, conform OUG nr. 34/2014 art. 16 lit. m.\u003C/p\u003E\n\u003Cp\u003E\u003Cstrong\u003EValabilitate\u003C/strong\u003E: Cardul cadou este valabil 12 luni de la data achiziției.\u003C/p\u003E\n\u003Cp\u003E\u003Cb\u003EConditii de utilizare a gift card-ului: \u003C/b\u003E\u003C/p\u003E\n\u003Cp\u003E1. Gift Cardul Meron poate fi folosit integral pentru o singura achizitie.\u003C/p\u003E\n\u003Cp\u003E2. Gift cardul se poate utiliza EXCLUSIV pentru achizitii online pe meron.ro. Acest gift card nu este valabil in locatiile fizice Meron.\u003C/p\u003E\n\u003Cp\u003E3. Valoarea produselor achizitionate prin Gift Card poate fi egala sau mai mare decat suma inscrisa pe card.\u003C/p\u003E\n\u003Cp\u003E4. Termenul de valabilitate al cardului este de 1 an calendaristic de la achizitia cardului.\u003C/p\u003E\n\u003Cp\u003E5. Pentru a efectua comenzi folosind cardul cadou, este necesara introducerea codului primit prin e-mail, dupa adaugarea produselor in cos.\u003C/p\u003E\n\u003Cp\u003E6. Utilizarea acestui card implica acceptarea termenilor si conditiilor mai sus mentionate.\u003C/p\u003E\n\u003Cp\u003E\u003Cb\u003ECum functioneaza achizitionarea unui card cadou?\u003C/b\u003E\u003C/p\u003E\n\u003Cp\u003E&#8211; Tu achiti cardul cadou pentru persoana draga direct pe meron.ro\u003C/p\u003E\n\u003Cp\u003E&#8211; Noi iti confirmam comanda prin e-mail si emitem codul unic de achizitie. Daca vrei ca gift card-ul sa ajunga direct la persoana careia ii este destinat cadoul, noi il putem transmite impreuna cu un mesaj din partea ta 🙂\u003C/p\u003E\n\u003Cp\u003E&nbsp;\u003C/p\u003E",
+    "on_sale": false,
+    "prices": {
+      "price": "5000",
+      "regular_price": "5000",
+      "sale_price": "5000",
+      "price_range": {
+        "min_amount": "5000",
+        "max_amount": "50000"
+      },
+      "currency_code": "RON",
+      "currency_symbol": "lei",
+      "currency_minor_unit": 2,
+      "currency_decimal_separator": ".",
+      "currency_thousand_separator": ",",
+      "currency_prefix": "",
+      "currency_suffix": " lei"
+    },
+    "price_html": "\u003Cspan class=\"woocs_price_code\" data-currency=\"\" data-redraw-id=\"68f0ecf25afd2\" data-product-id=\"33554\"\u003E\u003Cspan class=\"woocommerce-Price-amount amount\"\u003E50.00&nbsp;\u003Cspan class=\"woocommerce-Price-currencySymbol\"\u003Elei\u003C/span\u003E\u003C/span\u003E &ndash; \u003Cspan class=\"woocommerce-Price-amount amount\"\u003E500.00&nbsp;\u003Cspan class=\"woocommerce-Price-currencySymbol\"\u003Elei\u003C/span\u003E\u003C/span\u003E\u003C/span\u003E",
+    "average_rating": "0",
+    "review_count": 0,
+    "images": [
+      {
+        "id": 33559,
+        "src": "https://meron.ro/wp-content/uploads/2025/09/gift_card_3_.jpg",
+        "thumbnail": "https://meron.ro/wp-content/uploads/2025/09/gift_card_3_-430x430.jpg",
+        "srcset": "https://meron.ro/wp-content/uploads/2025/09/gift_card_3_.jpg 1600w, https://meron.ro/wp-content/uploads/2025/09/gift_card_3_-300x300.jpg 300w, https://meron.ro/wp-content/uploads/2025/09/gift_card_3_-800x800.jpg 800w, https://meron.ro/wp-content/uploads/2025/09/gift_card_3_-150x150.jpg 150w, https://meron.ro/wp-content/uploads/2025/09/gift_card_3_-768x768.jpg 768w, https://meron.ro/wp-content/uploads/2025/09/gift_card_3_-1536x1536.jpg 1536w, https://meron.ro/wp-content/uploads/2025/09/gift_card_3_-430x430.jpg 430w, https://meron.ro/wp-content/uploads/2025/09/gift_card_3_-700x700.jpg 700w, https://meron.ro/wp-content/uploads/2025/09/gift_card_3_-100x100.jpg 100w",
+        "sizes": "(max-width: 1600px) 100vw, 1600px",
+        "name": "gift_card_3_",
+        "alt": ""
+      }
+    ],
+    "categories": [
+      {
+        "id": 558,
+        "name": "Accesorii",
+        "slug": "accesorii",
+        "link": "https://meron.ro/categorie-produs/echipamente/echipamente-ustensile/accesorii/"
+      },
+      {
+        "id": 839,
+        "name": "Accesorii",
+        "slug": "accesorii-ceramica",
+        "link": "https://meron.ro/categorie-produs/ceramica/accesorii-ceramica/"
+      },
+      {
+        "id": 81,
+        "name": "Alternative",
+        "slug": "alternative",
+        "link": "https://meron.ro/categorie-produs/alternative/"
+      },
+      {
+        "id": 99,
+        "name": "Aparatură",
+        "slug": "echipamente-aparatura",
+        "link": "https://meron.ro/categorie-produs/echipamente/echipamente-aparatura/"
+      },
+      {
+        "id": 105,
+        "name": "Apparel",
+        "slug": "apparel",
+        "link": "https://meron.ro/categorie-produs/apparel/"
+      },
+      {
+        "id": 979,
+        "name": "Bluze",
+        "slug": "bluze",
+        "link": "https://meron.ro/categorie-produs/apparel/bluze/"
+      },
+      {
+        "id": 1148,
+        "name": "Boxes",
+        "slug": "boxes",
+        "link": "https://meron.ro/categorie-produs/boxes/"
+      },
+      {
+        "id": 100,
+        "name": "Cadouri",
+        "slug": "cadouri",
+        "link": "https://meron.ro/categorie-produs/cadouri/"
+      },
+      {
+        "id": 495,
+        "name": "Cântare",
+        "slug": "cantare",
+        "link": "https://meron.ro/categorie-produs/echipamente/echipamente-ustensile/cantare/"
+      },
+      {
+        "id": 101,
+        "name": "Ceramica",
+        "slug": "ceramica",
+        "link": "https://meron.ro/categorie-produs/ceramica/"
+      },
+      {
+        "id": 835,
+        "name": "Cești",
+        "slug": "cesti",
+        "link": "https://meron.ro/categorie-produs/ceramica/cesti/"
+      },
+      {
+        "id": 126,
+        "name": "Coffee Explore",
+        "slug": "coffee-explorer",
+        "link": "https://meron.ro/categorie-produs/yellow-box/coffee-explorer/"
+      },
+      {
+        "id": 106,
+        "name": "Coffee Master",
+        "slug": "yellow-box-coffee-master",
+        "link": "https://meron.ro/categorie-produs/yellow-box/yellow-box-coffee-master/"
+      },
+      {
+        "id": 585,
+        "name": "Cursuri",
+        "slug": "cursuri",
+        "link": "https://meron.ro/categorie-produs/cursuri/"
+      },
+      {
+        "id": 94,
+        "name": "Echipamente",
+        "slug": "echipamente",
+        "link": "https://meron.ro/categorie-produs/echipamente/"
+      },
+      {
+        "id": 549,
+        "name": "Espressoare",
+        "slug": "espressoare",
+        "link": "https://meron.ro/categorie-produs/echipamente/echipamente-aparatura/espressoare/"
+      },
+      {
+        "id": 837,
+        "name": "Farfurii",
+        "slug": "farfurii",
+        "link": "https://meron.ro/categorie-produs/ceramica/farfurii/"
+      },
+      {
+        "id": 537,
+        "name": "Filtre de hârtie",
+        "slug": "filtre-de-hartie",
+        "link": "https://meron.ro/categorie-produs/echipamente/echipamente-ustensile/filtre-de-hartie/"
+      },
+      {
+        "id": 833,
+        "name": "Jackets",
+        "slug": "jackets",
+        "link": "https://meron.ro/categorie-produs/apparel/jackets/"
+      },
+      {
+        "id": 547,
+        "name": "Kettles",
+        "slug": "kettles",
+        "link": "https://meron.ro/categorie-produs/echipamente/echipamente-ustensile/kettles/"
+      },
+      {
+        "id": 541,
+        "name": "Latiere",
+        "slug": "latiere",
+        "link": "https://meron.ro/categorie-produs/echipamente/echipamente-ustensile/latiere/"
+      },
+      {
+        "id": 89,
+        "name": "Pachete",
+        "slug": "pachete",
+        "link": "https://meron.ro/categorie-produs/pachete/"
+      },
+      {
+        "id": 116,
+        "name": "Pachete",
+        "slug": "pachete-cadouri",
+        "link": "https://meron.ro/categorie-produs/cadouri/pachete-cadouri/"
+      },
+      {
+        "id": 553,
+        "name": "Râșnițe",
+        "slug": "rasnite",
+        "link": "https://meron.ro/categorie-produs/echipamente/echipamente-aparatura/rasnite/"
+      },
+      {
+        "id": 529,
+        "name": "Râșnițe manuale",
+        "slug": "rasnite-manuale",
+        "link": "https://meron.ro/categorie-produs/echipamente/echipamente-ustensile/rasnite-manuale/"
+      },
+      {
+        "id": 92,
+        "name": "Roast on demand",
+        "slug": "roast-on-demand",
+        "link": "https://meron.ro/categorie-produs/roast-on-demand/"
+      },
+      {
+        "id": 831,
+        "name": "Sneakers",
+        "slug": "sneakers",
+        "link": "https://meron.ro/categorie-produs/apparel/sneakers/"
+      },
+      {
+        "id": 829,
+        "name": "Tricouri",
+        "slug": "tricouri",
+        "link": "https://meron.ro/categorie-produs/apparel/tricouri/"
+      },
+      {
+        "id": 95,
+        "name": "Ustensile",
+        "slug": "echipamente-ustensile",
+        "link": "https://meron.ro/categorie-produs/echipamente/echipamente-ustensile/"
+      },
+      {
+        "id": 535,
+        "name": "V60, aeropress, filtru manual",
+        "slug": "v60-aeropress-filtru-manual",
+        "link": "https://meron.ro/categorie-produs/echipamente/echipamente-ustensile/v60-aeropress-filtru-manual/"
+      },
+      {
+        "id": 387,
+        "name": "Velements",
+        "slug": "velements",
+        "link": "https://meron.ro/categorie-produs/cadouri/velements/"
+      },
+      {
+        "id": 96,
+        "name": "Yellow Box",
+        "slug": "yellow-box",
+        "link": "https://meron.ro/categorie-produs/yellow-box/"
+      }
+    ],
+    "tags": [],
+    "brands": [],
+    "attributes": [
+      {
+        "id": 0,
+        "name": "Gift Card Amount",
+        "taxonomy": null,
+        "has_variations": true,
+        "terms": [
+          {
+            "id": 0,
+            "name": "50 lei",
+            "slug": "50 lei"
+          },
+          {
+            "id": 0,
+            "name": "100 lei",
+            "slug": "100 lei"
+          },
+          {
+            "id": 0,
+            "name": "200 lei",
+            "slug": "200 lei"
+          },
+          {
+            "id": 0,
+            "name": "500 lei",
+            "slug": "500 lei"
+          }
+        ]
+      }
+    ],
+    "variations": [
+      {
+        "id": 33555,
+        "attributes": [
+          {
+            "name": "Gift Card Amount",
+            "value": "50 lei"
+          }
+        ]
+      },
+      {
+        "id": 33556,
+        "attributes": [
+          {
+            "name": "Gift Card Amount",
+            "value": "100 lei"
+          }
+        ]
+      },
+      {
+        "id": 33557,
+        "attributes": [
+          {
+            "name": "Gift Card Amount",
+            "value": "200 lei"
+          }
+        ]
+      },
+      {
+        "id": 33558,
+        "attributes": [
+          {
+            "name": "Gift Card Amount",
+            "value": "500 lei"
+          }
+        ]
+      }
+    ],
+    "grouped_products": [],
+    "has_options": true,
+    "is_purchasable": true,
+    "is_in_stock": true,
+    "is_on_backorder": false,
+    "low_stock_remaining": null,
+    "stock_availability": {
+      "text": "",
+      "class": "in-stock"
+    },
+    "sold_individually": false,
+    "add_to_cart": {
+      "text": "Selecteaza suma",
+      "description": "Selectează opțiunile pentru &bdquo;Meron Online Gift Card&rdquo;",
+      "url": "https://meron.ro/produs/meron-online-gift-card/",
+      "minimum": 1,
+      "maximum": 9999,
+      "multiple_of": 1
+    },
+    "extensions": {
+
+    }
+  },
+  {
+    "id": 32393,
+    "name": "Best of Panama &#8211; Box",
+    "slug": "best-of-panama-box",
+    "parent": 0,
+    "type": "simple",
+    "variation": "",
+    "permalink": "https://meron.ro/produs/best-of-panama-box/",
+    "sku": "10092025",
+    "short_description": "",
+    "description": "\u003Cp data-start=\"242\" data-end=\"534\"\u003E\u003Cstrong data-start=\"242\" data-end=\"276\"\u003EDescoperă Best of Panama &#8211; Box\u003C/strong\u003E, o selecție dedicată celor care caută experiențe de cafea cu adevărat remarcabile. Cutia conține 6 origini unice de Gesha, în loturi mici, provenite de la unele  dintre cele mai respectate ferme din Panama – fiecare cu un profil distinct și o poveste aparte.\u003C/p\u003E\n\u003Cp data-start=\"536\" data-end=\"804\"\u003ECuprinzând terroiruri diverse și abordări diferite de procesare, fiecare ceașcă surprinde o nuanță aparte a soiului Gesha. Această colecție nu este doar despre raritate, ci despre măiestria și pasiunea cultivatorilor care au redefinit standardele de calitate în cafea.\u003C/p\u003E\n\u003Cp data-start=\"536\" data-end=\"804\"\u003E\u003Cstrong\u003EConținut:\u003C/strong\u003E\u003C/p\u003E\n\u003Cul\u003E\n\u003Cli\u003E\u003Cb\u003EJanson Lot 1015 40g\u003C/b\u003E\u003C/li\u003E\n\u003Cli\u003E\u003Cb\u003EDeborah Nirvana 40g\u003C/b\u003E\u003C/li\u003E\n\u003Cli\u003E\u003Cb\u003EAbu Lot 3275\u003C/b\u003E \u003Cb\u003E40g\u003C/b\u003E\u003C/li\u003E\n\u003Cli\u003E\u003Cb\u003ELerida Lot #5 Natural\u003C/b\u003E \u003Cb\u003E40g\u003C/b\u003E\u003C/li\u003E\n\u003Cli\u003E\u003Cb\u003ELamastus Plano\u003C/b\u003E \u003Cb\u003E40g\u003C/b\u003E\u003C/li\u003E\n\u003Cli\u003E\u003Cb\u003EAltieri Alessa\u003C/b\u003E \u003Cb\u003E40g\u003C/b\u003E\u003C/li\u003E\n\u003C/ul\u003E\n\u003Cp data-start=\"806\" data-end=\"932\"\u003EO invitație la explorare: gustă diversitatea, rafinamentul și profunzimea unora dintre cele mai apreciate cafele din lume.\u003C/p\u003E",
+    "on_sale": false,
+    "prices": {
+      "price": "38000",
+      "regular_price": "38000",
+      "sale_price": "38000",
+      "price_range": null,
+      "currency_code": "RON",
+      "currency_symbol": "lei",
+      "currency_minor_unit": 2,
+      "currency_decimal_separator": ".",
+      "currency_thousand_separator": ",",
+      "currency_prefix": "",
+      "currency_suffix": " lei"
+    },
+    "price_html": "\u003Cspan class=\"woocs_price_code\" data-currency=\"\" data-redraw-id=\"68f0ecf277fe1\" data-product-id=\"32393\"\u003E\u003Cspan class=\"woocommerce-Price-amount amount\"\u003E380.00&nbsp;\u003Cspan class=\"woocommerce-Price-currencySymbol\"\u003Elei\u003C/span\u003E\u003C/span\u003E\u003C/span\u003E",
+    "average_rating": "0",
+    "review_count": 0,
+    "images": [
+      {
+        "id": 32394,
+        "src": "https://meron.ro/wp-content/uploads/2025/08/YellowBoxPanama-9-of-15-scaled.jpg",
+        "thumbnail": "https://meron.ro/wp-content/uploads/2025/08/YellowBoxPanama-9-of-15-430x430.jpg",
+        "srcset": "https://meron.ro/wp-content/uploads/2025/08/YellowBoxPanama-9-of-15-scaled.jpg 2560w, https://meron.ro/wp-content/uploads/2025/08/YellowBoxPanama-9-of-15-400x259.jpg 400w, https://meron.ro/wp-content/uploads/2025/08/YellowBoxPanama-9-of-15-1234x800.jpg 1234w, https://meron.ro/wp-content/uploads/2025/08/YellowBoxPanama-9-of-15-768x498.jpg 768w, https://meron.ro/wp-content/uploads/2025/08/YellowBoxPanama-9-of-15-1536x996.jpg 1536w, https://meron.ro/wp-content/uploads/2025/08/YellowBoxPanama-9-of-15-2048x1328.jpg 2048w, https://meron.ro/wp-content/uploads/2025/08/YellowBoxPanama-9-of-15-700x454.jpg 700w, https://meron.ro/wp-content/uploads/2025/08/YellowBoxPanama-9-of-15-100x65.jpg 100w",
+        "sizes": "(max-width: 2560px) 100vw, 2560px",
+        "name": "YellowBoxPanama (9 of 15)",
+        "alt": ""
+      },
+      {
+        "id": 32395,
+        "src": "https://meron.ro/wp-content/uploads/2025/08/YellowBoxPanama-2-of-15-scaled.jpg",
+        "thumbnail": "https://meron.ro/wp-content/uploads/2025/08/YellowBoxPanama-2-of-15-430x430.jpg",
+        "srcset": "https://meron.ro/wp-content/uploads/2025/08/YellowBoxPanama-2-of-15-scaled.jpg 1646w, https://meron.ro/wp-content/uploads/2025/08/YellowBoxPanama-2-of-15-193x300.jpg 193w, https://meron.ro/wp-content/uploads/2025/08/YellowBoxPanama-2-of-15-514x800.jpg 514w, https://meron.ro/wp-content/uploads/2025/08/YellowBoxPanama-2-of-15-768x1194.jpg 768w, https://meron.ro/wp-content/uploads/2025/08/YellowBoxPanama-2-of-15-988x1536.jpg 988w, https://meron.ro/wp-content/uploads/2025/08/YellowBoxPanama-2-of-15-1317x2048.jpg 1317w, https://meron.ro/wp-content/uploads/2025/08/YellowBoxPanama-2-of-15-700x1089.jpg 700w, https://meron.ro/wp-content/uploads/2025/08/YellowBoxPanama-2-of-15-100x156.jpg 100w",
+        "sizes": "(max-width: 1646px) 100vw, 1646px",
+        "name": "YellowBoxPanama (2 of 15)",
+        "alt": ""
+      }
+    ],
+    "categories": [
+      {
+        "id": 1148,
+        "name": "Boxes",
+        "slug": "boxes",
+        "link": "https://meron.ro/categorie-produs/boxes/"
+      },
+      {
+        "id": 100,
+        "name": "Cadouri",
+        "slug": "cadouri",
+        "link": "https://meron.ro/categorie-produs/cadouri/"
+      },
+      {
+        "id": 116,
+        "name": "Pachete",
+        "slug": "pachete-cadouri",
+        "link": "https://meron.ro/categorie-produs/cadouri/pachete-cadouri/"
+      },
+      {
+        "id": 89,
+        "name": "Pachete",
+        "slug": "pachete",
+        "link": "https://meron.ro/categorie-produs/pachete/"
+      },
+      {
+        "id": 92,
+        "name": "Roast on demand",
+        "slug": "roast-on-demand",
+        "link": "https://meron.ro/categorie-produs/roast-on-demand/"
+      }
+    ],
+    "tags": [
+      {
+        "id": 443,
+        "name": "rarity",
+        "slug": "rarity-ro",
+        "link": "https://meron.ro/eticheta-produs/rarity-ro/"
+      }
+    ],
+    "brands": [],
+    "attributes": [],
+    "variations": [],
+    "grouped_products": [],
+    "has_options": false,
+    "is_purchasable": true,
+    "is_in_stock": true,
+    "is_on_backorder": false,
+    "low_stock_remaining": null,
+    "stock_availability": {
+      "text": "",
+      "class": "in-stock"
+    },
+    "sold_individually": false,
+    "add_to_cart": {
+      "text": "Adaugă în coș",
+      "description": "Adaugă în coș: &amp;lbquo;Best of Panama &#8211; Box&rdquo;",
+      "url": "?add-to-cart=32393",
+      "minimum": 1,
+      "maximum": 9999,
+      "multiple_of": 1
+    },
+    "extensions": {
+
+    }
+  },
+  {
+    "id": 32584,
+    "name": "Kune &#8211; Colombia | 250g",
+    "slug": "kune-colombia-250g",
+    "parent": 0,
+    "type": "variable",
+    "variation": "",
+    "permalink": "https://meron.ro/produs/kune-colombia-250g/",
+    "sku": "05082025",
+    "short_description": "",
+    "description": "\u003Cp data-start=\"87\" data-end=\"407\"\u003E\u003Cstrong data-start=\"87\" data-end=\"104\"\u003EKune Colombia\u003C/strong\u003E este o cafea de origine din \u003Cstrong data-start=\"133\" data-end=\"145\"\u003EColombia\u003C/strong\u003E, cultivată în regiunea \u003Cstrong data-start=\"169\" data-end=\"179\"\u003ETolima\u003C/strong\u003E, la ferma \u003Cstrong data-start=\"190\" data-end=\"201\"\u003ELa Roma\u003C/strong\u003E, produsă de \u003Cstrong data-start=\"214\" data-end=\"238\"\u003EBlack Condor Project\u003C/strong\u003E. Este obținută din soiurile \u003Cstrong data-start=\"267\" data-end=\"278\"\u003ECaturra\u003C/strong\u003E și \u003Cstrong data-start=\"282\" data-end=\"294\"\u003ECastillo\u003C/strong\u003E, procesată \u003Cstrong data-start=\"306\" data-end=\"316\"\u003Ewashed\u003C/strong\u003E. Profilul aromatic evidențiază note de \u003Cstrong data-start=\"356\" data-end=\"390\"\u003Emigdale, caramel, fructe roșii\u003C/strong\u003E și \u003Cstrong data-start=\"394\" data-end=\"404\"\u003Epanela\u003C/strong\u003E.\u003C/p\u003E\n\u003Cp data-start=\"604\" data-end=\"927\"\u003EKune este creat special pentru espressoarele full automate. 100% Arabica, are o solubilitate ridicată, ceea ce oferă în ceașcă un corp mediu-ridicat și un gust echilibrat, cu accente de cacao, ciocolată și fructe uscate. Aciditatea este scăzută, ceea ce îl face ideal pentru un espresso corpolent sau un cappuccino dulce.\u003C/p\u003E\n\u003Cp data-start=\"929\" data-end=\"1154\"\u003ENumele „Kune” provine din limba esperanto și înseamnă „împreună” — simbol al comunității iubitorilor de cafea și al momentelor împărtășite zi de zi. Prăjirea este adaptată fiecărui lot pentru a aduce perfecțiunea în ceașcă.\u003C/p\u003E\n\u003Cp data-start=\"409\" data-end=\"666\"\u003E\u003Cstrong data-start=\"409\" data-end=\"463\"\u003EAceasta este o cafea de specialitate, 100% Arabica\u003C/strong\u003E, crescută cu grijă într-o zonă geografică bine definită, culeasă manual, selectată, procesată și prăjită în loturi mici, pentru a evidenția caracteristicile unice ale originii și metodei de procesare.\u003C/p\u003E\n\u003Cp data-start=\"2534\" data-end=\"2648\"\u003E\u003Cstrong data-start=\"152\" data-end=\"167\"\u003EProspețime:\u003C/strong\u003E Dacă preferați cafeaua cât mai proaspătă, „normală” (1–2 săptămâni) sau mai odihnită (2+ săptămâni), scrieți-ne în \u003Cem data-start=\"283\" data-end=\"291\"\u003ENotițe\u003C/em\u003E la finalizarea comenzii. Vom încerca să respectăm dorința, în funcție de disponibilitate.\u003C/p\u003E\n\u003Cp data-start=\"668\" data-end=\"829\"\u003E\u003Cstrong data-start=\"668\" data-end=\"680\"\u003ELivrare:\u003C/strong\u003E Livrăm în România de luni până vineri, prin curierat rapid, în termen de 2–4 zile lucrătoare. La comenzi de peste 200 lei, livrarea este gratuită.\u003C/p\u003E",
+    "on_sale": false,
+    "prices": {
+      "price": "5800",
+      "regular_price": "5800",
+      "sale_price": "5800",
+      "price_range": null,
+      "currency_code": "RON",
+      "currency_symbol": "lei",
+      "currency_minor_unit": 2,
+      "currency_decimal_separator": ".",
+      "currency_thousand_separator": ",",
+      "currency_prefix": "",
+      "currency_suffix": " lei"
+    },
+    "price_html": "\u003Cspan class=\"woocs_price_code\" data-currency=\"\" data-redraw-id=\"68f0ecf2bbf3a\" data-product-id=\"32584\"\u003E\u003Cspan class=\"woocommerce-Price-amount amount\"\u003E58.00&nbsp;\u003Cspan class=\"woocommerce-Price-currencySymbol\"\u003Elei\u003C/span\u003E\u003C/span\u003E\u003C/span\u003E",
+    "average_rating": "0",
+    "review_count": 0,
+    "images": [
+      {
+        "id": 32572,
+        "src": "https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1.jpg",
+        "thumbnail": "https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-430x430.jpg",
+        "srcset": "https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1.jpg 1707w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-200x300.jpg 200w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-533x800.jpg 533w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-768x1152.jpg 768w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-1024x1536.jpg 1024w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-1366x2048.jpg 1366w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-700x1050.jpg 700w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-100x150.jpg 100w",
+        "sizes": "(max-width: 1707px) 100vw, 1707px",
+        "name": "columbia-500-g-scaled",
+        "alt": ""
+      }
+    ],
+    "categories": [
+      {
+        "id": 864,
+        "name": "ro",
+        "slug": "ro",
+        "link": "https://meron.ro/categorie-produs/ro/"
+      }
+    ],
+    "tags": [
+      {
+        "id": 645,
+        "name": "kune",
+        "slug": "kune",
+        "link": "https://meron.ro/eticheta-produs/kune/"
+      }
+    ],
+    "brands": [],
+    "attributes": [
+      {
+        "id": 4,
+        "name": "Măcinătură",
+        "taxonomy": "pa_macinatura",
+        "has_variations": true,
+        "terms": [
+          {
+            "id": 118,
+            "name": "Aeropress",
+            "slug": "aeropress"
+          },
+          {
+            "id": 119,
+            "name": "Boabe",
+            "slug": "boabe"
+          },
+          {
+            "id": 120,
+            "name": "Cold Brew",
+            "slug": "cold-brew"
+          },
+          {
+            "id": 121,
+            "name": "Espresso",
+            "slug": "espresso"
+          },
+          {
+            "id": 122,
+            "name": "Filtru manual",
+            "slug": "filtru-manual"
+          },
+          {
+            "id": 123,
+            "name": "French Press",
+            "slug": "french-press"
+          },
+          {
+            "id": 124,
+            "name": "Ibric",
+            "slug": "ibric"
+          },
+          {
+            "id": 125,
+            "name": "Moka pot",
+            "slug": "moka-pot"
+          }
+        ]
+      }
+    ],
+    "variations": [
+      {
+        "id": 32585,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": null
+          }
+        ]
+      }
+    ],
+    "grouped_products": [],
+    "has_options": true,
+    "is_purchasable": true,
+    "is_in_stock": true,
+    "is_on_backorder": false,
+    "low_stock_remaining": null,
+    "stock_availability": {
+      "text": "",
+      "class": ""
+    },
+    "sold_individually": false,
+    "add_to_cart": {
+      "text": "Selectează opțiunile",
+      "description": "Selectează opțiunile pentru &bdquo;Kune &#8211; Colombia | 250g&rdquo;",
+      "url": "https://meron.ro/produs/kune-colombia-250g/",
+      "minimum": 1,
+      "maximum": 9999,
+      "multiple_of": 1
+    },
+    "extensions": {
+
+    }
+  },
+  {
+    "id": 32578,
+    "name": "Kune &#8211; Colombia | 500g",
+    "slug": "kune-colombia-500g",
+    "parent": 0,
+    "type": "variable",
+    "variation": "",
+    "permalink": "https://meron.ro/produs/kune-colombia-500g/",
+    "sku": "05082025-2",
+    "short_description": "",
+    "description": "\u003Cp data-start=\"87\" data-end=\"407\"\u003E\u003Cstrong data-start=\"87\" data-end=\"104\"\u003EKune Colombia\u003C/strong\u003E este o cafea de origine din \u003Cstrong data-start=\"133\" data-end=\"145\"\u003EColombia\u003C/strong\u003E, cultivată în regiunea \u003Cstrong data-start=\"169\" data-end=\"179\"\u003ETolima\u003C/strong\u003E, la ferma \u003Cstrong data-start=\"190\" data-end=\"201\"\u003ELa Roma\u003C/strong\u003E, produsă de \u003Cstrong data-start=\"214\" data-end=\"238\"\u003EBlack Condor Project\u003C/strong\u003E. Este obținută din soiurile \u003Cstrong data-start=\"267\" data-end=\"278\"\u003ECaturra\u003C/strong\u003E și \u003Cstrong data-start=\"282\" data-end=\"294\"\u003ECastillo\u003C/strong\u003E, procesată \u003Cstrong data-start=\"306\" data-end=\"316\"\u003Ewashed\u003C/strong\u003E. Profilul aromatic evidențiază note de \u003Cstrong data-start=\"356\" data-end=\"390\"\u003Emigdale, caramel, fructe roșii\u003C/strong\u003E și \u003Cstrong data-start=\"394\" data-end=\"404\"\u003Epanela\u003C/strong\u003E.\u003C/p\u003E\n\u003Cp data-start=\"604\" data-end=\"927\"\u003EKune este creat special pentru espressoarele full automate. 100% Arabica, are o solubilitate ridicată, ceea ce oferă în ceașcă un corp mediu-ridicat și un gust echilibrat, cu accente de cacao, ciocolată și fructe uscate. Aciditatea este scăzută, ceea ce îl face ideal pentru un espresso corpolent sau un cappuccino dulce.\u003C/p\u003E\n\u003Cp data-start=\"929\" data-end=\"1154\"\u003ENumele „Kune” provine din limba esperanto și înseamnă „împreună” — simbol al comunității iubitorilor de cafea și al momentelor împărtășite zi de zi. Prăjirea este adaptată fiecărui lot pentru a aduce perfecțiunea în ceașcă.\u003C/p\u003E\n\u003Cp data-start=\"409\" data-end=\"666\"\u003E\u003Cstrong data-start=\"409\" data-end=\"463\"\u003EAceasta este o cafea de specialitate, 100% Arabica\u003C/strong\u003E, crescută cu grijă într-o zonă geografică bine definită, culeasă manual, selectată, procesată și prăjită în loturi mici, pentru a evidenția caracteristicile unice ale originii și metodei de procesare.\u003C/p\u003E\n\u003Cp data-start=\"2534\" data-end=\"2648\"\u003E\u003Cstrong data-start=\"152\" data-end=\"167\"\u003EProspețime:\u003C/strong\u003E Dacă preferați cafeaua cât mai proaspătă, „normală” (1–2 săptămâni) sau mai odihnită (2+ săptămâni), scrieți-ne în \u003Cem data-start=\"283\" data-end=\"291\"\u003ENotițe\u003C/em\u003E la finalizarea comenzii. Vom încerca să respectăm dorința, în funcție de disponibilitate.\u003C/p\u003E\n\u003Cp data-start=\"668\" data-end=\"829\"\u003E\u003Cstrong data-start=\"668\" data-end=\"680\"\u003ELivrare:\u003C/strong\u003E Livrăm în România de luni până vineri, prin curierat rapid, în termen de 2–4 zile lucrătoare. La comenzi de peste 200 lei, livrarea este gratuită.\u003C/p\u003E",
+    "on_sale": false,
+    "prices": {
+      "price": "9900",
+      "regular_price": "9900",
+      "sale_price": "9900",
+      "price_range": null,
+      "currency_code": "RON",
+      "currency_symbol": "lei",
+      "currency_minor_unit": 2,
+      "currency_decimal_separator": ".",
+      "currency_thousand_separator": ",",
+      "currency_prefix": "",
+      "currency_suffix": " lei"
+    },
+    "price_html": "\u003Cspan class=\"woocs_price_code\" data-currency=\"\" data-redraw-id=\"68f0ecf2be797\" data-product-id=\"32578\"\u003E\u003Cspan class=\"woocommerce-Price-amount amount\"\u003E99.00&nbsp;\u003Cspan class=\"woocommerce-Price-currencySymbol\"\u003Elei\u003C/span\u003E\u003C/span\u003E\u003C/span\u003E",
+    "average_rating": "0",
+    "review_count": 0,
+    "images": [
+      {
+        "id": 32572,
+        "src": "https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1.jpg",
+        "thumbnail": "https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-430x430.jpg",
+        "srcset": "https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1.jpg 1707w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-200x300.jpg 200w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-533x800.jpg 533w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-768x1152.jpg 768w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-1024x1536.jpg 1024w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-1366x2048.jpg 1366w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-700x1050.jpg 700w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-100x150.jpg 100w",
+        "sizes": "(max-width: 1707px) 100vw, 1707px",
+        "name": "columbia-500-g-scaled",
+        "alt": ""
+      }
+    ],
+    "categories": [
+      {
+        "id": 864,
+        "name": "ro",
+        "slug": "ro",
+        "link": "https://meron.ro/categorie-produs/ro/"
+      }
+    ],
+    "tags": [
+      {
+        "id": 645,
+        "name": "kune",
+        "slug": "kune",
+        "link": "https://meron.ro/eticheta-produs/kune/"
+      }
+    ],
+    "brands": [],
+    "attributes": [
+      {
+        "id": 4,
+        "name": "Măcinătură",
+        "taxonomy": "pa_macinatura",
+        "has_variations": true,
+        "terms": [
+          {
+            "id": 118,
+            "name": "Aeropress",
+            "slug": "aeropress"
+          },
+          {
+            "id": 119,
+            "name": "Boabe",
+            "slug": "boabe"
+          },
+          {
+            "id": 120,
+            "name": "Cold Brew",
+            "slug": "cold-brew"
+          },
+          {
+            "id": 121,
+            "name": "Espresso",
+            "slug": "espresso"
+          },
+          {
+            "id": 122,
+            "name": "Filtru manual",
+            "slug": "filtru-manual"
+          },
+          {
+            "id": 123,
+            "name": "French Press",
+            "slug": "french-press"
+          },
+          {
+            "id": 124,
+            "name": "Ibric",
+            "slug": "ibric"
+          },
+          {
+            "id": 125,
+            "name": "Moka pot",
+            "slug": "moka-pot"
+          }
+        ]
+      }
+    ],
+    "variations": [
+      {
+        "id": 32579,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": null
+          }
+        ]
+      }
+    ],
+    "grouped_products": [],
+    "has_options": true,
+    "is_purchasable": true,
+    "is_in_stock": true,
+    "is_on_backorder": false,
+    "low_stock_remaining": null,
+    "stock_availability": {
+      "text": "",
+      "class": ""
+    },
+    "sold_individually": false,
+    "add_to_cart": {
+      "text": "Selectează opțiunile",
+      "description": "Selectează opțiunile pentru &bdquo;Kune &#8211; Colombia | 500g&rdquo;",
+      "url": "https://meron.ro/produs/kune-colombia-500g/",
+      "minimum": 1,
+      "maximum": 9999,
+      "multiple_of": 1
+    },
+    "extensions": {
+
+    }
+  },
+  {
+    "id": 32563,
+    "name": "Kune &#8211; Colombia | 1000g",
+    "slug": "kune-colombia-1000g",
+    "parent": 0,
+    "type": "variable",
+    "variation": "",
+    "permalink": "https://meron.ro/produs/kune-colombia-1000g/",
+    "sku": "05082025-3",
+    "short_description": "",
+    "description": "\u003Cp data-start=\"87\" data-end=\"407\"\u003E\u003Cstrong data-start=\"87\" data-end=\"104\"\u003EKune Colombia\u003C/strong\u003E este o cafea de origine din \u003Cstrong data-start=\"133\" data-end=\"145\"\u003EColombia\u003C/strong\u003E, cultivată în regiunea \u003Cstrong data-start=\"169\" data-end=\"179\"\u003ETolima\u003C/strong\u003E, la ferma \u003Cstrong data-start=\"190\" data-end=\"201\"\u003ELa Roma\u003C/strong\u003E, produsă de \u003Cstrong data-start=\"214\" data-end=\"238\"\u003EBlack Condor Project\u003C/strong\u003E. Este obținută din soiurile \u003Cstrong data-start=\"267\" data-end=\"278\"\u003ECaturra\u003C/strong\u003E și \u003Cstrong data-start=\"282\" data-end=\"294\"\u003ECastillo\u003C/strong\u003E, procesată \u003Cstrong data-start=\"306\" data-end=\"316\"\u003Ewashed\u003C/strong\u003E. Profilul aromatic evidențiază note de \u003Cstrong data-start=\"356\" data-end=\"390\"\u003Emigdale, caramel, fructe roșii\u003C/strong\u003E și \u003Cstrong data-start=\"394\" data-end=\"404\"\u003Epanela\u003C/strong\u003E.\u003C/p\u003E\n\u003Cp data-start=\"604\" data-end=\"927\"\u003EKune este creat special pentru espressoarele full automate. 100% Arabica, are o solubilitate ridicată, ceea ce oferă în ceașcă un corp mediu-ridicat și un gust echilibrat, cu accente de cacao, ciocolată și fructe uscate. Aciditatea este scăzută, ceea ce îl face ideal pentru un espresso corpolent sau un cappuccino dulce.\u003C/p\u003E\n\u003Cp data-start=\"929\" data-end=\"1154\"\u003ENumele „Kune” provine din limba esperanto și înseamnă „împreună” — simbol al comunității iubitorilor de cafea și al momentelor împărtășite zi de zi. Prăjirea este adaptată fiecărui lot pentru a aduce perfecțiunea în ceașcă.\u003C/p\u003E\n\u003Cp data-start=\"409\" data-end=\"666\"\u003E\u003Cstrong data-start=\"409\" data-end=\"463\"\u003EAceasta este o cafea de specialitate, 100% Arabica\u003C/strong\u003E, crescută cu grijă într-o zonă geografică bine definită, culeasă manual, selectată, procesată și prăjită în loturi mici, pentru a evidenția caracteristicile unice ale originii și metodei de procesare.\u003C/p\u003E\n\u003Cp data-start=\"2534\" data-end=\"2648\"\u003E\u003Cstrong data-start=\"152\" data-end=\"167\"\u003EProspețime:\u003C/strong\u003E Dacă preferați cafeaua cât mai proaspătă, „normală” (1–2 săptămâni) sau mai odihnită (2+ săptămâni), scrieți-ne în \u003Cem data-start=\"283\" data-end=\"291\"\u003ENotițe\u003C/em\u003E la finalizarea comenzii. Vom încerca să respectăm dorința, în funcție de disponibilitate.\u003C/p\u003E\n\u003Cp data-start=\"668\" data-end=\"829\"\u003E\u003Cstrong data-start=\"668\" data-end=\"680\"\u003ELivrare:\u003C/strong\u003E Livrăm în România de luni până vineri, prin curierat rapid, în termen de 2–4 zile lucrătoare. La comenzi de peste 200 lei, livrarea este gratuită.\u003C/p\u003E",
+    "on_sale": false,
+    "prices": {
+      "price": "19000",
+      "regular_price": "19000",
+      "sale_price": "19000",
+      "price_range": null,
+      "currency_code": "RON",
+      "currency_symbol": "lei",
+      "currency_minor_unit": 2,
+      "currency_decimal_separator": ".",
+      "currency_thousand_separator": ",",
+      "currency_prefix": "",
+      "currency_suffix": " lei"
+    },
+    "price_html": "\u003Cspan class=\"woocs_price_code\" data-currency=\"\" data-redraw-id=\"68f0ecf2c0c95\" data-product-id=\"32563\"\u003E\u003Cspan class=\"woocommerce-Price-amount amount\"\u003E190.00&nbsp;\u003Cspan class=\"woocommerce-Price-currencySymbol\"\u003Elei\u003C/span\u003E\u003C/span\u003E\u003C/span\u003E",
+    "average_rating": "0",
+    "review_count": 0,
+    "images": [
+      {
+        "id": 32572,
+        "src": "https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1.jpg",
+        "thumbnail": "https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-430x430.jpg",
+        "srcset": "https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1.jpg 1707w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-200x300.jpg 200w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-533x800.jpg 533w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-768x1152.jpg 768w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-1024x1536.jpg 1024w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-1366x2048.jpg 1366w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-700x1050.jpg 700w, https://meron.ro/wp-content/uploads/2025/08/columbia-500-g-scaled-1-100x150.jpg 100w",
+        "sizes": "(max-width: 1707px) 100vw, 1707px",
+        "name": "columbia-500-g-scaled",
+        "alt": ""
+      }
+    ],
+    "categories": [
+      {
+        "id": 864,
+        "name": "ro",
+        "slug": "ro",
+        "link": "https://meron.ro/categorie-produs/ro/"
+      }
+    ],
+    "tags": [
+      {
+        "id": 645,
+        "name": "kune",
+        "slug": "kune",
+        "link": "https://meron.ro/eticheta-produs/kune/"
+      }
+    ],
+    "brands": [],
+    "attributes": [
+      {
+        "id": 4,
+        "name": "Măcinătură",
+        "taxonomy": "pa_macinatura",
+        "has_variations": true,
+        "terms": [
+          {
+            "id": 118,
+            "name": "Aeropress",
+            "slug": "aeropress"
+          },
+          {
+            "id": 119,
+            "name": "Boabe",
+            "slug": "boabe"
+          },
+          {
+            "id": 120,
+            "name": "Cold Brew",
+            "slug": "cold-brew"
+          },
+          {
+            "id": 121,
+            "name": "Espresso",
+            "slug": "espresso"
+          },
+          {
+            "id": 122,
+            "name": "Filtru manual",
+            "slug": "filtru-manual"
+          },
+          {
+            "id": 123,
+            "name": "French Press",
+            "slug": "french-press"
+          },
+          {
+            "id": 124,
+            "name": "Ibric",
+            "slug": "ibric"
+          },
+          {
+            "id": 125,
+            "name": "Moka pot",
+            "slug": "moka-pot"
+          }
+        ]
+      }
+    ],
+    "variations": [
+      {
+        "id": 32573,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": null
+          }
+        ]
+      }
+    ],
+    "grouped_products": [],
+    "has_options": true,
+    "is_purchasable": true,
+    "is_in_stock": true,
+    "is_on_backorder": false,
+    "low_stock_remaining": null,
+    "stock_availability": {
+      "text": "",
+      "class": ""
+    },
+    "sold_individually": false,
+    "add_to_cart": {
+      "text": "Selectează opțiunile",
+      "description": "Selectează opțiunile pentru &bdquo;Kune &#8211; Colombia | 1000g&rdquo;",
+      "url": "https://meron.ro/produs/kune-colombia-1000g/",
+      "minimum": 1,
+      "maximum": 9999,
+      "multiple_of": 1
+    },
+    "extensions": {
+
+    }
+  },
+  {
+    "id": 10616,
+    "name": "Kune &#8211; Blend | 250g",
+    "slug": "kune-blend-250g",
+    "parent": 0,
+    "type": "variable",
+    "variation": "",
+    "permalink": "https://meron.ro/produs/kune-blend-250g/",
+    "sku": "324",
+    "short_description": "\u003Cp\u003EUn blend confortabil, perfect pentru espressoarele automate\u003C/p\u003E",
+    "description": "\u003Cp\u003EKune este blendul creat special pentru espressoarele full automate. Un blend 100% arabica, KUNE are o solubilitate ridicată, ceea ce ne ajută să obținem în ceașcă o cafea cu corp mediu-ridicat, cu note clare de cacao și ciocolată și un iz de fructe uscate. Aciditatea este fină, aproape absentă, ceea ce îl face ideal pentru cine caută un espresso corpolent sau pentru un cappuccino dulce.\u003C/p\u003E\n\u003Cp\u003EKune provine din limba esperanto și înseamnă „împreună”. Împreună în fiecare zi, în fiecare dimineață pentru comunitatea celor care iubesc cafeaua. Cu o rețeță de prăjire adaptată special pentru fiecare lot, aduce un strop de perfecțiune în ceașca fiecărui iubitor de cafea.\u003C/p\u003E\n\u003Cp data-start=\"2534\" data-end=\"2648\"\u003E\u003Cstrong data-start=\"152\" data-end=\"167\"\u003EProspețime:\u003C/strong\u003E Dacă preferați cafeaua cât mai proaspătă, „normală” (1–2 săptămâni) sau mai odihnită (2+ săptămâni), scrieți-ne în \u003Cem data-start=\"283\" data-end=\"291\"\u003ENotițe\u003C/em\u003E la finalizarea comenzii. Vom încerca să respectăm dorința, în funcție de disponibilitate.\u003C/p\u003E\n\u003Cp\u003E\u003Cb\u003EAciditate:\u003C/b\u003E\u003Cspan style=\"font-weight: 400\"\u003E scăzută\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cb\u003EProfil de prăjire: \u003C/b\u003E\u003Cspan style=\"font-weight: 400\"\u003Emediu\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cb\u003ENote de degustare: \u003C/b\u003E\u003Cspan style=\"font-weight: 400\"\u003Eciocolată, cacao, iz de fructe\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cstrong\u003ELivrare:\u003C/strong\u003E Livrăm în România de luni până vineri, prin curierat rapid, în termen de 2-4 zile lucrătoare. La comenzi de peste 200 lei, livrarea este gratuită.\u003C/p\u003E",
+    "on_sale": false,
+    "prices": {
+      "price": "5200",
+      "regular_price": "5200",
+      "sale_price": "5200",
+      "price_range": null,
+      "currency_code": "RON",
+      "currency_symbol": "lei",
+      "currency_minor_unit": 2,
+      "currency_decimal_separator": ".",
+      "currency_thousand_separator": ",",
+      "currency_prefix": "",
+      "currency_suffix": " lei"
+    },
+    "price_html": "\u003Cspan class=\"woocs_price_code\" data-currency=\"\" data-redraw-id=\"68f0ecf331a88\" data-product-id=\"10616\"\u003E\u003Cspan class=\"woocommerce-Price-amount amount\"\u003E52.00&nbsp;\u003Cspan class=\"woocommerce-Price-currencySymbol\"\u003Elei\u003C/span\u003E\u003C/span\u003E\u003C/span\u003E",
+    "average_rating": "0",
+    "review_count": 0,
+    "images": [
+      {
+        "id": 19211,
+        "src": "https://meron.ro/wp-content/uploads/2022/09/house-blend-500-g-scaled.jpg",
+        "thumbnail": "https://meron.ro/wp-content/uploads/2022/09/house-blend-500-g-430x430.jpg",
+        "srcset": "https://meron.ro/wp-content/uploads/2022/09/house-blend-500-g-scaled.jpg 1707w, https://meron.ro/wp-content/uploads/2022/09/house-blend-500-g-200x300.jpg 200w, https://meron.ro/wp-content/uploads/2022/09/house-blend-500-g-533x800.jpg 533w, https://meron.ro/wp-content/uploads/2022/09/house-blend-500-g-768x1152.jpg 768w, https://meron.ro/wp-content/uploads/2022/09/house-blend-500-g-1024x1536.jpg 1024w, https://meron.ro/wp-content/uploads/2022/09/house-blend-500-g-1365x2048.jpg 1365w, https://meron.ro/wp-content/uploads/2022/09/house-blend-500-g-700x1050.jpg 700w, https://meron.ro/wp-content/uploads/2022/09/house-blend-500-g-100x150.jpg 100w",
+        "sizes": "(max-width: 1707px) 100vw, 1707px",
+        "name": "house blend 500 g",
+        "alt": ""
+      },
+      {
+        "id": 14149,
+        "src": "https://meron.ro/wp-content/uploads/2023/01/Espresso_cup.jpg",
+        "thumbnail": "https://meron.ro/wp-content/uploads/2023/01/Espresso_cup-430x430.jpg",
+        "srcset": "https://meron.ro/wp-content/uploads/2023/01/Espresso_cup.jpg 1000w, https://meron.ro/wp-content/uploads/2023/01/Espresso_cup-430x430.jpg 430w, https://meron.ro/wp-content/uploads/2023/01/Espresso_cup-100x100.jpg 100w, https://meron.ro/wp-content/uploads/2023/01/Espresso_cup-700x700.jpg 700w",
+        "sizes": "(max-width: 1000px) 100vw, 1000px",
+        "name": "Espresso_cup",
+        "alt": ""
+      }
+    ],
+    "categories": [
+      {
+        "id": 864,
+        "name": "ro",
+        "slug": "ro",
+        "link": "https://meron.ro/categorie-produs/ro/"
+      }
+    ],
+    "tags": [
+      {
+        "id": 645,
+        "name": "kune",
+        "slug": "kune",
+        "link": "https://meron.ro/eticheta-produs/kune/"
+      }
+    ],
+    "brands": [],
+    "attributes": [
+      {
+        "id": 4,
+        "name": "Măcinătură",
+        "taxonomy": "pa_macinatura",
+        "has_variations": true,
+        "terms": [
+          {
+            "id": 118,
+            "name": "Aeropress",
+            "slug": "aeropress",
+            "default": false
+          },
+          {
+            "id": 119,
+            "name": "Boabe",
+            "slug": "boabe",
+            "default": true
+          },
+          {
+            "id": 120,
+            "name": "Cold Brew",
+            "slug": "cold-brew",
+            "default": false
+          },
+          {
+            "id": 121,
+            "name": "Espresso",
+            "slug": "espresso",
+            "default": false
+          },
+          {
+            "id": 122,
+            "name": "Filtru manual",
+            "slug": "filtru-manual",
+            "default": false
+          },
+          {
+            "id": 123,
+            "name": "French Press",
+            "slug": "french-press",
+            "default": false
+          },
+          {
+            "id": 124,
+            "name": "Ibric",
+            "slug": "ibric",
+            "default": false
+          },
+          {
+            "id": 125,
+            "name": "Moka pot",
+            "slug": "moka-pot",
+            "default": false
+          }
+        ]
+      }
+    ],
+    "variations": [
+      {
+        "id": 12175,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "aeropress"
+          }
+        ]
+      },
+      {
+        "id": 12176,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "boabe"
+          }
+        ]
+      },
+      {
+        "id": 12177,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "cold-brew"
+          }
+        ]
+      },
+      {
+        "id": 12178,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "espresso"
+          }
+        ]
+      },
+      {
+        "id": 12179,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "filtru-manual"
+          }
+        ]
+      },
+      {
+        "id": 12180,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "french-press"
+          }
+        ]
+      },
+      {
+        "id": 12181,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "ibric"
+          }
+        ]
+      },
+      {
+        "id": 12182,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "moka-pot"
+          }
+        ]
+      }
+    ],
+    "grouped_products": [],
+    "has_options": true,
+    "is_purchasable": true,
+    "is_in_stock": true,
+    "is_on_backorder": false,
+    "low_stock_remaining": null,
+    "stock_availability": {
+      "text": "",
+      "class": ""
+    },
+    "sold_individually": false,
+    "add_to_cart": {
+      "text": "Selectează opțiunile",
+      "description": "Selectează opțiunile pentru &bdquo;Kune &#8211; Blend | 250g&rdquo;",
+      "url": "https://meron.ro/produs/kune-blend-250g/",
+      "minimum": 1,
+      "maximum": 9999,
+      "multiple_of": 1
+    },
+    "extensions": {
+
+    }
+  },
+  {
+    "id": 10506,
+    "name": "Kune &#8211; House Blend | 1kg",
+    "slug": "kune-blend-1kg",
+    "parent": 0,
+    "type": "variable",
+    "variation": "",
+    "permalink": "https://meron.ro/produs/kune-blend-1kg/",
+    "sku": "315",
+    "short_description": "\u003Cp\u003EUn blend confortabil, perfect pentru espressoarele automate\u003C/p\u003E",
+    "description": "\u003Cp\u003EKune este blendul creat special pentru espressoarele full automate. Un blend 100% arabica, KUNE are o solubilitate ridicată, ceea ce ne ajută să obținem în ceașcă o cafea cu corp mediu-ridicat, cu note clare de cacao și ciocolată și un iz de fructe uscate. Aciditatea este fină, aproape absentă, ceea ce îl face ideal pentru cine caută un espresso corpolent sau pentru un cappuccino dulce.\u003C/p\u003E\n\u003Cp\u003EKune provine din limba esperanto și înseamnă „împreună”. Împreună în fiecare zi, în fiecare dimineață pentru comunitatea celor care iubesc cafeaua. Cu o rețeță de prăjire adaptată special pentru fiecare lot, aduce un strop de perfecțiune în ceașca fiecărui iubitor de cafea.\u003C/p\u003E\n\u003Cp data-start=\"2534\" data-end=\"2648\"\u003E\u003Cstrong data-start=\"152\" data-end=\"167\"\u003EProspețime:\u003C/strong\u003E Dacă preferați cafeaua cât mai proaspătă, „normală” (1–2 săptămâni) sau mai odihnită (2+ săptămâni), scrieți-ne în \u003Cem data-start=\"283\" data-end=\"291\"\u003ENotițe\u003C/em\u003E la finalizarea comenzii. Vom încerca să respectăm dorința, în funcție de disponibilitate.\u003C/p\u003E\n\u003Cp\u003E\u003Cb\u003ENote de degustare:\u003C/b\u003E caramel, ciocolată neagră, fructe uscate\u003C/p\u003E\n\u003Cp\u003E\u003Cb\u003EAciditate: \u003C/b\u003Escăzută\u003C/p\u003E\n\u003Cp\u003E\u003Cb\u003EGrad de măcinare: \u003C/b\u003Eboabe\u003C/p\u003E\n\u003Cp\u003E\u003Cstrong\u003ELivrare:\u003C/strong\u003E Livrăm în România de luni până vineri, prin curierat rapid, în termen de 2-4 zile lucrătoare. La comenzi de peste 200 lei, livrarea este gratuită.\u003C/p\u003E",
+    "on_sale": false,
+    "prices": {
+      "price": "18000",
+      "regular_price": "18000",
+      "sale_price": "18000",
+      "price_range": null,
+      "currency_code": "RON",
+      "currency_symbol": "lei",
+      "currency_minor_unit": 2,
+      "currency_decimal_separator": ".",
+      "currency_thousand_separator": ",",
+      "currency_prefix": "",
+      "currency_suffix": " lei"
+    },
+    "price_html": "\u003Cspan class=\"woocs_price_code\" data-currency=\"\" data-redraw-id=\"68f0ecf352476\" data-product-id=\"10506\"\u003E\u003Cspan class=\"woocommerce-Price-amount amount\"\u003E180.00&nbsp;\u003Cspan class=\"woocommerce-Price-currencySymbol\"\u003Elei\u003C/span\u003E\u003C/span\u003E\u003C/span\u003E",
+    "average_rating": "0",
+    "review_count": 0,
+    "images": [
+      {
+        "id": 19217,
+        "src": "https://meron.ro/wp-content/uploads/2022/09/house-blend-1-kg-1-scaled.jpg",
+        "thumbnail": "https://meron.ro/wp-content/uploads/2022/09/house-blend-1-kg-1-430x430.jpg",
+        "srcset": "https://meron.ro/wp-content/uploads/2022/09/house-blend-1-kg-1-scaled.jpg 1707w, https://meron.ro/wp-content/uploads/2022/09/house-blend-1-kg-1-200x300.jpg 200w, https://meron.ro/wp-content/uploads/2022/09/house-blend-1-kg-1-533x800.jpg 533w, https://meron.ro/wp-content/uploads/2022/09/house-blend-1-kg-1-768x1152.jpg 768w, https://meron.ro/wp-content/uploads/2022/09/house-blend-1-kg-1-1024x1536.jpg 1024w, https://meron.ro/wp-content/uploads/2022/09/house-blend-1-kg-1-1365x2048.jpg 1365w, https://meron.ro/wp-content/uploads/2022/09/house-blend-1-kg-1-700x1050.jpg 700w, https://meron.ro/wp-content/uploads/2022/09/house-blend-1-kg-1-100x150.jpg 100w",
+        "sizes": "(max-width: 1707px) 100vw, 1707px",
+        "name": "house blend 1 kg",
+        "alt": ""
+      },
+      {
+        "id": 19207,
+        "src": "https://meron.ro/wp-content/uploads/2022/09/Kune-1-kg-spate-1-scaled.jpg",
+        "thumbnail": "https://meron.ro/wp-content/uploads/2022/09/Kune-1-kg-spate-1-430x430.jpg",
+        "srcset": "https://meron.ro/wp-content/uploads/2022/09/Kune-1-kg-spate-1-scaled.jpg 1707w, https://meron.ro/wp-content/uploads/2022/09/Kune-1-kg-spate-1-200x300.jpg 200w, https://meron.ro/wp-content/uploads/2022/09/Kune-1-kg-spate-1-533x800.jpg 533w, https://meron.ro/wp-content/uploads/2022/09/Kune-1-kg-spate-1-768x1152.jpg 768w, https://meron.ro/wp-content/uploads/2022/09/Kune-1-kg-spate-1-1024x1536.jpg 1024w, https://meron.ro/wp-content/uploads/2022/09/Kune-1-kg-spate-1-1365x2048.jpg 1365w, https://meron.ro/wp-content/uploads/2022/09/Kune-1-kg-spate-1-700x1050.jpg 700w, https://meron.ro/wp-content/uploads/2022/09/Kune-1-kg-spate-1-100x150.jpg 100w",
+        "sizes": "(max-width: 1707px) 100vw, 1707px",
+        "name": "Kune 1 kg spate",
+        "alt": ""
+      },
+      {
+        "id": 14165,
+        "src": "https://meron.ro/wp-content/uploads/2023/01/Espresso_coffee.jpg",
+        "thumbnail": "https://meron.ro/wp-content/uploads/2023/01/Espresso_coffee-430x430.jpg",
+        "srcset": "https://meron.ro/wp-content/uploads/2023/01/Espresso_coffee.jpg 1000w, https://meron.ro/wp-content/uploads/2023/01/Espresso_coffee-430x430.jpg 430w, https://meron.ro/wp-content/uploads/2023/01/Espresso_coffee-100x100.jpg 100w, https://meron.ro/wp-content/uploads/2023/01/Espresso_coffee-700x700.jpg 700w",
+        "sizes": "(max-width: 1000px) 100vw, 1000px",
+        "name": "Espresso_coffee",
+        "alt": ""
+      },
+      {
+        "id": 14149,
+        "src": "https://meron.ro/wp-content/uploads/2023/01/Espresso_cup.jpg",
+        "thumbnail": "https://meron.ro/wp-content/uploads/2023/01/Espresso_cup-430x430.jpg",
+        "srcset": "https://meron.ro/wp-content/uploads/2023/01/Espresso_cup.jpg 1000w, https://meron.ro/wp-content/uploads/2023/01/Espresso_cup-430x430.jpg 430w, https://meron.ro/wp-content/uploads/2023/01/Espresso_cup-100x100.jpg 100w, https://meron.ro/wp-content/uploads/2023/01/Espresso_cup-700x700.jpg 700w",
+        "sizes": "(max-width: 1000px) 100vw, 1000px",
+        "name": "Espresso_cup",
+        "alt": ""
+      }
+    ],
+    "categories": [
+      {
+        "id": 864,
+        "name": "ro",
+        "slug": "ro",
+        "link": "https://meron.ro/categorie-produs/ro/"
+      }
+    ],
+    "tags": [
+      {
+        "id": 645,
+        "name": "kune",
+        "slug": "kune",
+        "link": "https://meron.ro/eticheta-produs/kune/"
+      }
+    ],
+    "brands": [],
+    "attributes": [
+      {
+        "id": 4,
+        "name": "Măcinătură",
+        "taxonomy": "pa_macinatura",
+        "has_variations": true,
+        "terms": [
+          {
+            "id": 118,
+            "name": "Aeropress",
+            "slug": "aeropress",
+            "default": false
+          },
+          {
+            "id": 119,
+            "name": "Boabe",
+            "slug": "boabe",
+            "default": true
+          },
+          {
+            "id": 120,
+            "name": "Cold Brew",
+            "slug": "cold-brew",
+            "default": false
+          },
+          {
+            "id": 121,
+            "name": "Espresso",
+            "slug": "espresso",
+            "default": false
+          },
+          {
+            "id": 122,
+            "name": "Filtru manual",
+            "slug": "filtru-manual",
+            "default": false
+          },
+          {
+            "id": 123,
+            "name": "French Press",
+            "slug": "french-press",
+            "default": false
+          },
+          {
+            "id": 124,
+            "name": "Ibric",
+            "slug": "ibric",
+            "default": false
+          },
+          {
+            "id": 125,
+            "name": "Moka pot",
+            "slug": "moka-pot",
+            "default": false
+          }
+        ]
+      }
+    ],
+    "variations": [
+      {
+        "id": 12194,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "aeropress"
+          }
+        ]
+      },
+      {
+        "id": 12195,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "boabe"
+          }
+        ]
+      },
+      {
+        "id": 12196,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "cold-brew"
+          }
+        ]
+      },
+      {
+        "id": 12197,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "espresso"
+          }
+        ]
+      },
+      {
+        "id": 12198,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "filtru-manual"
+          }
+        ]
+      },
+      {
+        "id": 12199,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "french-press"
+          }
+        ]
+      },
+      {
+        "id": 12200,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "ibric"
+          }
+        ]
+      },
+      {
+        "id": 12201,
+        "attributes": [
+          {
+            "name": "Măcinătură",
+            "value": "moka-pot"
+          }
+        ]
+      }
+    ],
+    "grouped_products": [],
+    "has_options": true,
+    "is_purchasable": true,
+    "is_in_stock": true,
+    "is_on_backorder": false,
+    "low_stock_remaining": null,
+    "stock_availability": {
+      "text": "",
+      "class": ""
+    },
+    "sold_individually": false,
+    "add_to_cart": {
+      "text": "Selectează opțiunile",
+      "description": "Selectează opțiunile pentru &bdquo;Kune &#8211; House Blend | 1kg&rdquo;",
+      "url": "https://meron.ro/produs/kune-blend-1kg/",
+      "minimum": 1,
+      "maximum": 9999,
+      "multiple_of": 1
+    },
+    "extensions": {
+
+    }
+  }
+]

@@ -13,6 +13,8 @@ origins= [
     "http://127.0.0.1:5173",
 ]
 
+#origins=["*"] # For testing purposes and local network visibility
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
