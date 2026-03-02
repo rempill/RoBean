@@ -1,14 +1,21 @@
 import asyncio
 import inspect
-from sqlalchemy import select
+from datetime import datetime, timezone, timedelta
+from sqlalchemy import select,update
 from db.database import SessionLocal, init_db
-from db.models import Store
+from db.models import Store,Bean
 from scraper import SCRAPERS
 from db.crud import upsert_coffee_bean
 
 
 async def scrape_store(store, db):
     scraper = SCRAPERS.get(store.name)
+
+    if scraper is None:
+        return
+
+    now_utc=datetime.now(timezone.utc)
+    cutoff=now_utc-timedelta(days=2)
 
     beans = await (scraper() if inspect.iscoroutinefunction(scraper) else asyncio.to_thread(scraper))
 
@@ -21,6 +28,15 @@ async def scrape_store(store, db):
         }
         variants = [v.model_dump() for v in bean.variants]
         await upsert_coffee_bean(db, bean_data, variants)
+
+    await db.execute(
+        update(Bean)
+        .where(
+            Bean.store_id == store.id,
+            (Bean.last_seen.is_(None)) | (Bean.last_seen < cutoff)
+        )
+        .values(is_active=False)
+    )
 
 
 async def run_all_scrapers():

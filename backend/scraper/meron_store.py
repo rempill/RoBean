@@ -5,63 +5,61 @@ from pydantic import HttpUrl
 from scraper.schemas import CoffeeBean
 from scraper.utils import get_response
 import json
+import re
 
+# Matches patterns like "250g", "1kg", "500 gr" (case-insensitive)
+WEIGHT_PATTERN = re.compile(r"(\d+)\s*(kg|g|gr)", re.IGNORECASE)
 
-async def parse_kune_product(product):
-    split_name = product["name"].split("|")
-    name = split_name[0].replace(" &#8211;", "").replace(" House", "").strip()
-    grams = split_name[1].replace("kg", "000").replace("g", "").strip()
-    price = product["prices"]["price"]
-    try:
-        grams = int(grams)
-        price = round(float(price) / 100, 2)
-        price_per_gram = round(price / grams, 3)
-        url = HttpUrl(product["permalink"])
-        image = HttpUrl(product["images"][0]["src"]) if product["images"] else None
-    except ValueError:
-        print(f"Invalid data for Kune product: {product['name']}")
-        return None
-    variant = [{
-        "grams": grams,
-        "price": price,
-        "price_per_gram": price_per_gram
-    }]
-    return CoffeeBean(
-        name=name,
-        store="Meron",
-        url=url,
-        image=image,
-        variants=variant
-    )
-
+def extract_grams(text:str)-> int:
+    if not text:
+        return 0
+    match=WEIGHT_PATTERN.search(text)
+    if not match:
+        return 0
+    value,unit=match.groups()
+    value=int(value)
+    return value*1000 if unit.lower()=="kg" else value
 
 async def parse_meron_product(product):
-    split_name = product["name"].split("|")
-    name_and_grams = split_name[0].replace(" &#8211;", "").strip()
-    name = " ".join(name_and_grams.split(" ")[:-1])
-    grams = name_and_grams.split(" ")[-1]
-    price = product["prices"]["price"]
-    try:
-        grams = int(grams.replace("kg", "000").replace("g", "").strip())
-        price = round(float(price) / 100, 2)
-        price_per_gram = round(price / grams, 3)
-        url = HttpUrl(product["permalink"])
-        image = HttpUrl(product["images"][0]["src"]) if product["images"] else None
-    except ValueError:
-        print(f"Invalid data for Meron product: {product['name']}")
+    full_name = product["name"]
+
+    excluded_keywords=["Gift Card", "Box", "Meron"]
+    if any(word in full_name for word in excluded_keywords) or product.get("type")=="pw-gift-card":
         return None
-    variant = [{
-        "grams": grams,
-        "price": price,
-        "price_per_gram": price_per_gram
-    }]
-    return CoffeeBean(
-        name=name,
-        store="Meron",
-        url=url,
-        image=image,
-        variants=variant
-    )
+
+    description = product.get("description", "")
+
+    # Remove noise and take part before '|' if exists
+    name_part = full_name.split("|")[0].strip()
+    clean_name = re.sub(r"\s+\d+(g|kg|gr).*$", "", name_part, flags=re.IGNORECASE).strip()
+    clean_name = clean_name.replace(" &#8211;", "").replace(" House", "").strip()
+
+    # Extract grams, fallback to description if not found in name
+    grams=extract_grams(full_name) or extract_grams(description)
+
+    if grams==0:
+        print(f"Skipping non-coffee or unknown weight: {full_name}")
+        return None
+
+    try:
+        price=round(float(product["prices"]["price"])/100, 2)
+        price_per_gram=round(price/grams, 3)
+        url=HttpUrl(product["permalink"])
+        image=HttpUrl(product["images"][0]["src"]) if product["images"] else None
+        return CoffeeBean(
+            name=clean_name,
+            store="Meron",
+            url=url,
+            image=image,
+            variants=[{
+                "grams": grams,
+                "price": price,
+                "price_per_gram": price_per_gram
+            }]
+        )
+    except (ValueError,KeyError,ZeroDivisionError):
+        print(f"Invalid price for product: {full_name}")
+        return None
 
 
 async def scrape_meron_store():
@@ -78,22 +76,15 @@ async def scrape_meron_store():
     beans = {}
 
     for product in products:
-        full_name = product["name"]
-        if "Meron" in full_name or "Box" in full_name:
-            continue
-
-        if "Kune" in full_name:
-            bean = await parse_kune_product(product)
-        else:
-            bean = await parse_meron_product(product)
+        bean=await parse_meron_product(product)
         if not bean:
             continue
-        bean_name = bean.name
-        if bean_name in beans:
-            beans[bean_name].variants.extend(bean.variants)
+        # Grouping by name to handle different bag sizes
+        if bean.name in beans:
+            beans[bean.name].variants.extend(bean.variants)
+            # If multiple sizes exist, update URL to a search result for better UX
+            search_query=bean.name.replace(" ","+")
+            beans[bean.name].url = f"https://meron.ro/?s={search_query}&post_type=product"
         else:
-            beans[bean_name] = bean
-        if len(beans[bean_name].variants) > 1:
-            beans[bean_name].url = "https://meron.ro/?s=" + bean_name.replace(" ", "+") + "&post_type=product"
-
+            beans[bean.name] = bean
     return list(beans.values())

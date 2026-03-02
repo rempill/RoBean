@@ -2,7 +2,11 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, delete, insert
 from .models import Bean, Variant
 
+from datetime import datetime,timezone
+
 async def upsert_coffee_bean(db: AsyncSession, data: dict, variants: list[dict]):
+    now_utc=datetime.now(timezone.utc)
+
     # Check if bean exists
     stmt = select(Bean).where(
         Bean.store_id == data["store_id"],
@@ -15,10 +19,20 @@ async def upsert_coffee_bean(db: AsyncSession, data: dict, variants: list[dict])
         # Update simple fields
         bean.name = data["name"]
         bean.image = data.get("image")
+
+        # Mark and Reactivate Bean
+        bean.is_active=True
+        bean.last_seen=now_utc
+
         await db.execute(delete(Variant).where(Variant.bean_id == bean.id))
     else:
         # Create new bean and flush to obtain its ID
         bean = Bean(**data)
+
+        # Mark and Activate Bean
+        bean.is_active=True
+        bean.last_seen=now_utc
+
         db.add(bean)
         # Ensure bean.id is available for variant operations
         await db.flush()

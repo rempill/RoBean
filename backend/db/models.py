@@ -10,7 +10,7 @@ def now_utc():
 class Store(Base):
     __tablename__="stores"
     id: Mapped[int]=mapped_column(primary_key=True)
-    name: Mapped[str]=mapped_column(String(50),unique=True,nullable=False)
+    name: Mapped[str]=mapped_column(String(256),unique=True,nullable=False)
     url: Mapped[str | None]=mapped_column(String(2048))
     beans: Mapped[list["Bean"]]=relationship(back_populates="store")
 
@@ -19,7 +19,7 @@ class Bean(Base):
     id: Mapped[int]=mapped_column(primary_key=True)
     store_id: Mapped[int]=mapped_column(ForeignKey("stores.id"))
     store: Mapped["Store"]=relationship(back_populates="beans")
-    name: Mapped[str]=mapped_column(String(50),nullable=False)
+    name: Mapped[str]=mapped_column(String(256),nullable=False)
     url: Mapped[str]=mapped_column(String(2048),nullable=False)
     image: Mapped[str | None]=mapped_column(String(2048))
     variants: Mapped[list["Variant"]]=relationship(back_populates="bean",cascade="all, delete-orphan")
@@ -27,6 +27,8 @@ class Bean(Base):
     created_at: Mapped[datetime]=mapped_column(DateTime(timezone=True),default=now_utc)
     updated_at: Mapped[datetime]=mapped_column(DateTime(timezone=True),default=now_utc, onupdate=now_utc)
 
+    last_seen: Mapped[datetime|None]=mapped_column(DateTime(timezone=True),nullable=True)
+    is_active: Mapped[bool]=mapped_column(Boolean,default=True,nullable=False)
 class Variant(Base):
     __tablename__="variants"
     id:Mapped[int]=mapped_column(primary_key=True)

@@ -20,6 +20,8 @@ async def list_beans(db: AsyncSession = Depends(get_db)):
         )
     )
     stores = result.scalars().unique().all()
+    for store in stores:
+        store.beans=[b for b in store.beans if getattr(b,"is_active",True)]
     return {"stores": stores}
 
 # Legacy endpoints (disabled)
