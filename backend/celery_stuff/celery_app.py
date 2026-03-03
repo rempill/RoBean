@@ -20,7 +20,7 @@ async def _refresh_db():
     # Then run scrapers sequentially
     await run_all_scrapers()
 
-@celery.task(name="backend.celery_stuff.celery_app.refresh_db")
-def refresh_db():
+@celery.task(name="celery_stuff.celery_app.refresh_db")
+def refresh_db() -> None:
     # Converts async function to sync safely on Windows and in workers
     async_to_sync(_refresh_db)()

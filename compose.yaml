@@ -36,7 +36,7 @@ services:
         - ./backend:/app
     env_file:
       - ./backend/.env
-    command: celery -A celery_stuff.celery_app worker --loglevel=info --pool=threads
+    command: celery -A celery_stuff.celery_app:celery worker --loglevel=info --pool=threads
     depends_on:
       - redis
 
@@ -48,7 +48,7 @@ services:
       - ./backend:/app
     env_file:
       - ./backend/.env
-    command: celery -A celery_stuff.celery_app beat --loglevel=info
+    command: celery -A celery_stuff.celery_app:celery beat --loglevel=info
     depends_on:
       - redis
 
@@ -60,6 +60,21 @@ services:
         - .:/app
     entrypoint: []
     container_name: backend_test
+
+  manual_refresh:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+        - ./backend:/app
+    env_file:
+        - ./backend/.env
+    command: python -m scripts.manual_refresh
+    depends_on:
+      - redis
+    environment:
+      ENV: dev
+
 
 
 
