@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
 from api.beans import router as beans_router
-from db.database import init_db, get_db_path
+from db.database import get_db_path
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -23,9 +23,6 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-@app.on_event("startup")
-async def on_startup():
-    await init_db()
 @app.get("/")
 async def health():
     return {"status": "ok", "db": str(get_db_path())}

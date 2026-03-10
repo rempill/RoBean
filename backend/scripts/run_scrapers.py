@@ -17,7 +17,15 @@ async def scrape_store(store, db):
     now_utc=datetime.now(timezone.utc)
     cutoff=now_utc-timedelta(days=2)
 
-    beans = await (scraper() if inspect.iscoroutinefunction(scraper) else asyncio.to_thread(scraper))
+    try:
+        beans = await (scraper() if inspect.iscoroutinefunction(scraper) else asyncio.to_thread(scraper))
+    except Exception as e:
+        print(f"Error scraping {store.name}: {e}")
+        return
+
+    if not beans:
+        print(f"No beans found for {store.name}. Skipping.")
+        return
 
     for bean in beans:
         bean_data = {

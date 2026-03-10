@@ -24,10 +24,8 @@ async def get_db():
     async with SessionLocal() as session:
         yield session
 
-async def init_db():
-    from .models import Bean, Store,Variant
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
+async def init_db() -> None:
+    return
 
 def get_db_path() -> Path:
     return DB_PATH
