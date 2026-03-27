@@ -16,6 +16,7 @@ class Store(Base):
 
 class Bean(Base):
     __tablename__="beans"
+    __table_args__ = (UniqueConstraint('store_id', 'name', name='_store_name_uc'),)
     id: Mapped[int]=mapped_column(primary_key=True)
     store_id: Mapped[int]=mapped_column(ForeignKey("stores.id"))
     store: Mapped["Store"]=relationship(back_populates="beans")

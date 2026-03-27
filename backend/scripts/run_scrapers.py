@@ -1,5 +1,6 @@
 import asyncio
 import inspect
+import traceback
 from datetime import datetime, timezone, timedelta
 from sqlalchemy import select,update
 from db.database import SessionLocal, init_db

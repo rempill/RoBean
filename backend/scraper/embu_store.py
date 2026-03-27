@@ -30,11 +30,11 @@ async def scrape_embu_store():
         variants=[]
         for variant_json in variants_json:
             try:
-                grams=int(variant_json["option1"].translate(str.maketrans('','','Kkg')).strip())
+                grams=int(variant_json["option1"].translate(str.maketrans('','','KkGg')).strip())
                 grams=1000 if grams==1 else grams
                 price=float(variant_json["price"])
             except ValueError:
-                print(f"Invalid data for variant in product: {name}")
+                print(f"Invalid data for variant in product: {name} - {variant_json["option1"]} at price {variant_json["price"]}")
                 continue
             if grams in [v["grams"] for v in variants]:
                     continue

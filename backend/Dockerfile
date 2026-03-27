@@ -17,6 +17,7 @@ COPY . .
 # Expose FastAPI port
 EXPOSE 8000
 
+RUN chmod +x ./entrypoint.sh
 
 # Run FastAPI
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["./entrypoint.sh"]
