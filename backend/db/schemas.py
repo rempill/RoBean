@@ -1,31 +1,35 @@
-from pydantic import BaseModel
 from datetime import datetime
-from typing import List
+from pydantic import BaseModel, ConfigDict
 
 class VariantOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     grams: int
-    price: float
+    price: float | None = None
     price_per_gram: float | None = None
-    class Config:
-        from_attributes = True
+
 
 class CoffeeBeanOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     name: str
     url: str
-    image: str | None
-    variants: List[VariantOut]
+    image: str | None = None
+    variants: list[VariantOut]
     updated_at: datetime
-    class Config:
-        from_attributes = True
+
 
 class StoreOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     name: str
     url: str | None = None
-    beans: List[CoffeeBeanOut]
-    class Config:
-        from_attributes = True
+    beans: list[CoffeeBeanOut]
+
 
 class Response(BaseModel):
-    stores: List[StoreOut]
+    model_config = ConfigDict(from_attributes=True)
+
+    stores: list[StoreOut]

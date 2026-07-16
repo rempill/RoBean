@@ -1,13 +1,34 @@
+from collections.abc import Sequence
+from datetime import datetime, timezone
+from decimal import Decimal
+from typing import TypedDict
+
+from sqlalchemy import delete, insert, select
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, delete, insert
+
 from .models import Bean, Variant
 
-from datetime import datetime,timezone
 
-async def upsert_coffee_bean(db: AsyncSession, data: dict, variants: list[dict]):
-    now_utc=datetime.now(timezone.utc)
+class BeanUpsertData(TypedDict):
+    store_id: int
+    name: str
+    url: str
+    image: str | None
 
-    # Check if bean exists
+
+class VariantUpsertData(TypedDict):
+    grams: int
+    price: float | Decimal | None
+    price_per_gram: float | Decimal | None
+
+
+async def upsert_coffee_bean(
+    db: AsyncSession,
+    data: BeanUpsertData,
+    variants: Sequence[VariantUpsertData],
+) -> int:
+    now_utc = datetime.now(timezone.utc)
+
     stmt = select(Bean).where(
         Bean.store_id == data["store_id"],
         Bean.url == data["url"],
@@ -16,31 +37,25 @@ async def upsert_coffee_bean(db: AsyncSession, data: dict, variants: list[dict])
     bean = result.scalar_one_or_none()
 
     if bean:
-        # Update simple fields
         bean.name = data["name"]
         bean.image = data.get("image")
-
-        # Mark and Reactivate Bean
-        bean.is_active=True
-        bean.last_seen=now_utc
+        bean.is_active = True
+        bean.last_seen = now_utc
 
         await db.execute(delete(Variant).where(Variant.bean_id == bean.id))
     else:
-        # Create new bean and flush to obtain its ID
         bean = Bean(**data)
-
-        # Mark and Activate Bean
-        bean.is_active=True
-        bean.last_seen=now_utc
+        bean.is_active = True
+        bean.last_seen = now_utc
 
         db.add(bean)
-        # Ensure bean.id is available for variant operations
         await db.flush()
 
-    # Insert fresh variants (if any)
     if variants:
-        stmt = insert(Variant).values([{"bean_id": bean.id, **v} for v in variants])
+        stmt = insert(Variant).values(
+            [{"bean_id": bean.id, **variant} for variant in variants]
+        )
         await db.execute(stmt)
-    # Flush so rows are written within the current transaction
+
     await db.flush()
     return bean.id
