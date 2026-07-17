@@ -1,16 +1,19 @@
 from pathlib import Path
 
 import os
+from collections.abc import AsyncGenerator
+from pathlib import Path
 
 from dotenv import load_dotenv
-from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sessionmaker
-from sqlalchemy.orm import declarative_base
+from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
+from sqlalchemy.orm import DeclarativeBase
 
 # Always load the backend .env file regardless of current working directory.
 BACKEND_DIR = Path(__file__).resolve().parents[1]
 load_dotenv(dotenv_path=BACKEND_DIR / ".env", override=False)
 
-Base = declarative_base()
+class Base(DeclarativeBase):
+    pass
 
 DB_PATH = BACKEND_DIR / "robean.db"
 
@@ -33,19 +36,25 @@ DATABASE_URL = _normalize_database_url(os.getenv("DATABASE_URL", DEFAULT_DATABAS
 
 engine = create_async_engine(DATABASE_URL, echo=False, future=True)
 
-SessionLocal = async_sessionmaker(bind=engine, class_=AsyncSession, expire_on_commit=False)
+SessionLocal: async_sessionmaker[AsyncSession] = async_sessionmaker(
+    bind=engine,
+    expire_on_commit=False,
+)
 
-async def get_db():
+async def get_db() -> AsyncGenerator[AsyncSession, None]:
     async with SessionLocal() as session:
         yield session
 
+
 async def init_db() -> None:
-    return
+    from db import models as _models  # noqa: F401
+
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
+
 
 def get_db_path() -> Path:
-    sqlite_prefix = "sqlite+aiosqlite:///"
-    if DATABASE_URL.startswith(sqlite_prefix):
-        return Path(DATABASE_URL[len(sqlite_prefix) :])
+    for sqlite_prefix in ("sqlite+aiosqlite:///", "sqlite:///"):
+        if DATABASE_URL.startswith(sqlite_prefix):
+            return Path(DATABASE_URL[len(sqlite_prefix) :])
     return DB_PATH
-
-

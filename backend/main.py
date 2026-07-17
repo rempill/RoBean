@@ -1,34 +1,35 @@
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 
 from api.beans import router as beans_router
 from db.database import get_db_path
-from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI()
+app: FastAPI = FastAPI()
 
-origins= [
-    "http://localhost",  # default
-    "http://127.0.0.1",  # allow root on port 80
+origins: list[str] = [
+    "http://localhost",
+    "http://127.0.0.1",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
 ]
-
-#origins=["*"] # For testing purposes and local network visibility
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"]
+    allow_headers=["*"],
 )
 
+
 @app.get("/")
-async def health():
+async def health() -> dict[str, str]:
     return {"status": "ok", "db": str(get_db_path())}
+
 
 app.include_router(beans_router)
 
-if __name__=="__main__":
+if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("backend.main:app",host="0.0.0.0",port=8000,reload=True)
+
+    uvicorn.run("backend.main:app", host="0.0.0.0", port=8000, reload=True)
