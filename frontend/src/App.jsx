@@ -8,6 +8,7 @@ function App() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [query, setQuery] = useState('');
+    const [sortOrder, setSortOrder] = useState('default');
 
     const queryLower = query.toLowerCase();
 
@@ -26,14 +27,34 @@ function App() {
         document.title = 'RoBean ☕';
     }, []);
 
-    const filteredStores = stores
-        .map(store => ({
-            ...store,
-            beans: (store.beans ?? []).filter(b => b.name.toLowerCase().includes(queryLower))
-        }))
+    const displayStores = stores
+        .map(store => {
+            const matchedBeans = (store.beans ?? [])
+                .filter(b => b.name.toLowerCase().includes(queryLower))
+                .map(b => {
+                    const ppgs = (b.variants ?? []).map(v => v.price_per_gram).filter(n => Number.isFinite(n) && n !== null);
+                    const minPricePerGram = ppgs.length ? Math.min(...ppgs) : Infinity;
+                    return { ...b, minPricePerGram };
+                });
+            return {
+                ...store,
+                beans: matchedBeans
+            };
+        })
         .filter(store => (store.beans?.length ?? 0) > 0);
 
-    const totalBeans = filteredStores.reduce((acc, s) => acc + (s.beans?.length ?? 0), 0);
+    if (sortOrder === 'price_per_gram_asc') {
+        displayStores.forEach(store => {
+            store.beans.sort((a, b) => a.minPricePerGram - b.minPricePerGram);
+        });
+        displayStores.sort((a, b) => {
+            const minA = Math.min(...a.beans.map(b => b.minPricePerGram));
+            const minB = Math.min(...b.beans.map(b => b.minPricePerGram));
+            return minA - minB;
+        });
+    }
+
+    const totalBeans = displayStores.reduce((acc, s) => acc + (s.beans?.length ?? 0), 0);
 
     return (
         <div className="w-full p-6">
@@ -52,8 +73,8 @@ function App() {
                         <p className="text-stone-600 mt-1">Search Smarter, Sip Better Coffee</p>
                     </div>
 
-                    {/* Right: Search Input */}
-                    <div className="flex flex-col w-full lg:w-1/5">
+                    {/* Right: Search Input & Sort */}
+                    <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto items-center justify-end mt-4 lg:mt-0">
                         <Input
                             type="text"
                             placeholder="Search beans..."
@@ -62,8 +83,19 @@ function App() {
                             style={{backgroundColor: 'rgb(223, 216, 208)'}} // 10% darker
                             onMouseEnter={e => e.currentTarget.style.backgroundColor = 'rgb(236, 228, 219)'} // 5% darker on hover
                             onMouseLeave={e => e.currentTarget.style.backgroundColor = 'rgb(223, 216, 208)'} // back to 10% darker
-                            className="w-full border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
+                            className="w-full sm:w-64 border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
                         />
+                        <select
+                            value={sortOrder}
+                            onChange={e => setSortOrder(e.target.value)}
+                            style={{backgroundColor: 'rgb(223, 216, 208)'}}
+                            onMouseEnter={e => e.currentTarget.style.backgroundColor = 'rgb(236, 228, 219)'}
+                            onMouseLeave={e => e.currentTarget.style.backgroundColor = 'rgb(223, 216, 208)'}
+                            className="w-full sm:w-auto appearance-none border-transparent text-stone-700 font-medium rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 cursor-pointer"
+                        >
+                            <option value="default">Sort: Default</option>
+                            <option value="price_per_gram_asc">Price/g: Low to High</option>
+                        </select>
                     </div>
                 </div>
             </header>
@@ -77,7 +109,7 @@ function App() {
 
             {!loading && !error && totalBeans > 0 && (
                 <div className="flex flex-col px-2 sm:px-4 lg:px-8 justify-center gap-8 w-full max-w mx-auto">
-                    {filteredStores.map(store => (
+                    {displayStores.map(store => (
                         <section key={store.id} className="w-full">
                             <div className="flex items-center justify-between mb-2">
                                 <h2 className="text-xl font-bold text-stone-800">
@@ -103,6 +135,7 @@ function App() {
                                                     name={bean.name}
                                                     imageUrl={bean.image}
                                                     minPrice={minPrice}
+                                                    minPricePerGram={bean.minPricePerGram !== Infinity ? bean.minPricePerGram : undefined}
                                                 />
                                         </a>
                                     );

@@ -1,6 +1,6 @@
 import {Card} from "@/components/ui/card";
 
-export function CoffeeCard({name, imageUrl, minPrice}) {
+export function CoffeeCard({name, imageUrl, minPrice, minPricePerGram}) {
     return (
         <Card
             className="
@@ -44,6 +44,11 @@ export function CoffeeCard({name, imageUrl, minPrice}) {
                 {minPrice && (
                     <span className="text-[11px] sm:text-sm text-muted-foreground mt-0.5 line-clamp-1">
                         Starting at {minPrice.toFixed(2)} RON
+                    </span>
+                )}
+                {minPricePerGram && (
+                    <span className="text-[10px] sm:text-[11px] text-muted-foreground/80 mt-0.5 line-clamp-1">
+                        {minPricePerGram.toFixed(3)} RON/g
                     </span>
                 )}
             </div>
