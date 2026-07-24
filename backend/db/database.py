@@ -21,6 +21,11 @@ DEFAULT_DATABASE_URL = f"sqlite+aiosqlite:///{DB_PATH.as_posix()}"
 
 
 def _normalize_database_url(database_url: str) -> str:
+    if database_url.startswith("postgres://"):
+        database_url = database_url.replace("postgres://", "postgresql+asyncpg://", 1)
+    elif database_url.startswith("postgresql://"):
+        database_url = database_url.replace("postgresql://", "postgresql+asyncpg://", 1)
+
     sqlite_prefixes = ("sqlite+aiosqlite:///", "sqlite:///")
     for prefix in sqlite_prefixes:
         if database_url.startswith(prefix):
@@ -34,7 +39,11 @@ def _normalize_database_url(database_url: str) -> str:
 
 DATABASE_URL = _normalize_database_url(os.getenv("DATABASE_URL", DEFAULT_DATABASE_URL))
 
-engine = create_async_engine(DATABASE_URL, echo=False, future=True)
+engine_kwargs = {"echo": False, "future": True}
+if DATABASE_URL.startswith("sqlite"):
+    engine_kwargs["connect_args"] = {"check_same_thread": False}
+
+engine = create_async_engine(DATABASE_URL, **engine_kwargs)
 
 SessionLocal: async_sessionmaker[AsyncSession] = async_sessionmaker(
     bind=engine,

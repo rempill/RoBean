@@ -2,7 +2,7 @@ import asyncio
 
 from pydantic import HttpUrl
 
-from scraper.schemas import CoffeeBean
+from scraper.schemas import ScrapedBean
 from scraper.utils import get_response
 import json
 import re
@@ -46,13 +46,13 @@ async def parse_meron_product(product):
         price_per_gram=round(price/grams, 3)
         url=HttpUrl(product["permalink"])
         image=HttpUrl(product["images"][0]["src"]) if product["images"] else None
-        return CoffeeBean(
+        return ScrapedBean(
             name=clean_name,
-            store="Meron",
+            store_name="Meron",
             url=url,
-            image=image,
+            image_url=image,
             variants=[{
-                "grams": grams,
+                "weight_grams": grams,
                 "price": price,
                 "price_per_gram": price_per_gram
             }]

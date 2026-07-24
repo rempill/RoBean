@@ -5,7 +5,7 @@ from typing import Optional
 from bs4 import BeautifulSoup
 from pydantic import HttpUrl
 
-from scraper.schemas import CoffeeBean
+from scraper.schemas import ScrapedBean
 from scraper.utils import get_response
 
 
@@ -84,10 +84,10 @@ def _clean_bean_name(name: str) -> str:
     return name
 
 
-def _parse_products_from_html(html: str) -> list[CoffeeBean]:
+def _parse_products_from_html(html: str) -> list[ScrapedBean]:
     soup = BeautifulSoup(html, "html.parser")
 
-    beans: list[CoffeeBean] = []
+    beans: list[ScrapedBean] = []
 
     # Odoo shop cards typically use .oe_product_cart
     for card in soup.select(".oe_product_cart"):
@@ -133,14 +133,14 @@ def _parse_products_from_html(html: str) -> list[CoffeeBean]:
             continue
 
         beans.append(
-            CoffeeBean(
+            ScrapedBean(
                 name=re.sub(r"\s+", " ", name),
-                store="Yume",
+                store_name="Yume",
                 url=HttpUrl(url),
-                image=HttpUrl(image) if image else None,
+                image_url=HttpUrl(image) if image else None,
                 variants=[
                     {
-                        "grams": grams,
+                        "weight_grams": grams,
                         "price": price,
                         "price_per_gram": round(price / grams, 3),
                     }
@@ -167,11 +167,11 @@ def _find_next_page_url(html: str) -> Optional[str]:
     return None
 
 
-async def scrape_yume_store(max_pages: int = 10) -> list[CoffeeBean]:
-    """Scrape Yume shop page(s) and return CoffeeBean models."""
+async def scrape_yume_store(max_pages: int = 10) -> list[ScrapedBean]:
+    """Scrape Yume shop page(s) and return ScrapedBean models."""
 
     url = SHOP_URL
-    all_beans_by_key: dict[tuple[str, str], CoffeeBean] = {}
+    all_beans_by_key: dict[tuple[str, str], ScrapedBean] = {}
 
     for _ in range(max_pages):
         html = await get_response(url)
@@ -181,16 +181,16 @@ async def scrape_yume_store(max_pages: int = 10) -> list[CoffeeBean]:
         beans = _parse_products_from_html(html)
         for bean in beans:
             normalized_name = _clean_bean_name(bean.name)
-            key = (normalized_name.lower(), bean.store)
+            key = (normalized_name.lower(), bean.store_name)
 
             if key in all_beans_by_key:
                 existing = all_beans_by_key[key]
                 existing.variants.extend(bean.variants)
                 existing.variants = sorted(
-                    {v.grams: v for v in existing.variants}.values(), key=lambda v: v.grams
+                    {v.weight_grams: v for v in existing.variants}.values(), key=lambda v: v.weight_grams
                 )
-                if not existing.image and bean.image:
-                    existing.image = bean.image
+                if not existing.image_url and bean.image_url:
+                    existing.image_url = bean.image_url
             else:
                 bean.name = normalized_name
                 all_beans_by_key[key] = bean

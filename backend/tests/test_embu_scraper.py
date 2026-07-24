@@ -31,13 +31,13 @@ def test_scrape_embu_store(mock_get):
     for bean in beans:
         if bean.name == "Brazilia F1":
             assert len(bean.variants) == 2
-            variant_250g = next((v for v in bean.variants if v.grams == 250), None)
+            variant_250g = next((v for v in bean.variants if v.weight_grams == 250), None)
             assert variant_250g is not None
             assert variant_250g.price == 52.0
             assert variant_250g.price_per_gram == 0.208
         elif bean.name == "Ethiopia Guji":
             assert len(bean.variants) == 2
-            variant_1kg = next((v for v in bean.variants if v.grams == 1000), None)
+            variant_1kg = next((v for v in bean.variants if v.weight_grams == 1000), None)
             assert variant_1kg is not None
             assert variant_1kg.price == 210.0
             assert variant_1kg.price_per_gram == 0.21

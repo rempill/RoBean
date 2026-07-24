@@ -36,12 +36,12 @@ def test_scrape_yume_store(mock_get):
     assert guji is not None
     assert len(guji.variants) == 2
 
-    v250 = next((v for v in guji.variants if v.grams == 250), None)
+    v250 = next((v for v in guji.variants if v.weight_grams == 250), None)
     assert v250 is not None
     assert v250.price == 58.0
     assert v250.price_per_gram == 0.232
 
-    v1kg = next((v for v in guji.variants if v.grams == 1000), None)
+    v1kg = next((v for v in guji.variants if v.weight_grams == 1000), None)
     assert v1kg is not None
     assert v1kg.price == 180.0
     assert v1kg.price_per_gram == 0.18
@@ -49,7 +49,7 @@ def test_scrape_yume_store(mock_get):
     flores = next((b for b in beans if b.name == "Colombia Las Flores"), None)
     assert flores is not None
     assert len(flores.variants) == 1
-    assert flores.variants[0].grams == 250
+    assert flores.variants[0].weight_grams == 250
     assert flores.variants[0].price == 77.0
     assert flores.variants[0].price_per_gram == 0.308
 
