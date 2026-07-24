@@ -1,6 +1,6 @@
-import {useState, useEffect} from 'react';
-import {Input} from '@/components/ui/input';
-import CoffeeCard from '@/components/coffee-card';
+import { useState, useEffect } from 'react';
+import { Input } from '@/components/ui/input';
+import CoffeeCard from '@/components/CoffeeCard';
 
 
 function App() {
@@ -64,7 +64,7 @@ function App() {
                     <div className="flex flex-col">
                         <a href="">
                             <div className="flex items-center gap-4">
-                                <img src={'/logo.png'} alt="RoBean Logo" className="h-10 w-10"/>
+                                <img src={'/logo.png'} alt="RoBean Logo" className="h-10 w-10" />
                                 <h1 className="text-4xl font-extrabold tracking-tight text-stone-900">
                                     RoBean
                                 </h1>
@@ -80,7 +80,7 @@ function App() {
                             placeholder="Search beans..."
                             value={query}
                             onChange={e => setQuery(e.target.value)}
-                            style={{backgroundColor: 'rgb(223, 216, 208)'}} // 10% darker
+                            style={{ backgroundColor: 'rgb(223, 216, 208)' }} // 10% darker
                             onMouseEnter={e => e.currentTarget.style.backgroundColor = 'rgb(236, 228, 219)'} // 5% darker on hover
                             onMouseLeave={e => e.currentTarget.style.backgroundColor = 'rgb(223, 216, 208)'} // back to 10% darker
                             className="w-full sm:w-64 border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
@@ -88,7 +88,7 @@ function App() {
                         <select
                             value={sortOrder}
                             onChange={e => setSortOrder(e.target.value)}
-                            style={{backgroundColor: 'rgb(223, 216, 208)'}}
+                            style={{ backgroundColor: 'rgb(223, 216, 208)' }}
                             onMouseEnter={e => e.currentTarget.style.backgroundColor = 'rgb(236, 228, 219)'}
                             onMouseLeave={e => e.currentTarget.style.backgroundColor = 'rgb(223, 216, 208)'}
                             className="w-full sm:w-auto appearance-none border-transparent text-stone-700 font-medium rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 cursor-pointer"
@@ -123,20 +123,23 @@ function App() {
                             </div>
                             <div className="flex flex-wrap justify-center gap-4 w-full">
                                 {store.beans.map(bean => {
-                                    // Compute the smallest variant price (coerce to numbers and filter invalid)
-                                    const prices = (bean.variants ?? [])
-                                        .map(v =>  v.price)
-                                        .filter(n => Number.isFinite(n));
-                                    const minPrice = prices.length ? Math.min(...prices) : undefined;
+                                    const domainBean = {
+                                        id: bean.id || Math.random(),
+                                        storeId: store.id,
+                                        name: bean.name,
+                                        url: bean.url,
+                                        imageUrl: bean.image,
+                                        variants: (bean.variants ?? []).map((v, i) => ({
+                                            id: v.id || i,
+                                            weightGrams: v.weight_grams || 0,
+                                            price: v.price,
+                                            pricePerGram: v.price_per_gram,
+                                        })),
+                                    };
 
                                     return (
                                         <a key={bean.id} href={bean.url} className="flex-shrink-0 w-[140px] sm:w-[180px] md:w-[200px]">
-                                                <CoffeeCard
-                                                    name={bean.name}
-                                                    imageUrl={bean.image}
-                                                    minPrice={minPrice}
-                                                    minPricePerGram={bean.minPricePerGram !== Infinity ? bean.minPricePerGram : undefined}
-                                                />
+                                            <CoffeeCard bean={domainBean} />
                                         </a>
                                     );
                                 })}
