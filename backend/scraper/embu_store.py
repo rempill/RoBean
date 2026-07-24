@@ -2,7 +2,7 @@ import asyncio
 
 from pydantic import HttpUrl
 
-from scraper.schemas import CoffeeBean
+from scraper.schemas import ScrapedBean
 from scraper.utils import get_response
 import json
 
@@ -36,11 +36,11 @@ async def scrape_embu_store():
             except ValueError:
                 print(f"Invalid data for variant in product: {name} - {variant_json["option1"]} at price {variant_json["price"]}")
                 continue
-            if grams in [v["grams"] for v in variants]:
+            if grams in [v["weight_grams"] for v in variants]:
                     continue
             price_per_gram=round(price/grams,3)
             variant={
-                "grams": grams,
+                "weight_grams": grams,
                 "price": price,
                 "price_per_gram": price_per_gram
             }
@@ -48,11 +48,11 @@ async def scrape_embu_store():
         if not variants:
             print(f"No valid variants for product: {name}")
             continue
-        beans.append(CoffeeBean(
+        beans.append(ScrapedBean(
             name=name,
-            store="Embu Coffee",
+            store_name="Embu Coffee",
             url=HttpUrl(url),
-            image=HttpUrl(image) if image else None,
+            image_url=HttpUrl(image) if image else None,
             variants=variants
         ))
 
