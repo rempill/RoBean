@@ -8,9 +8,10 @@ services:
     plan: free
     envVars:
       - key: DATABASE_URL
-        sync: false # Tells Render to prompt you for this value in the dashboard
+        sync: false
       - key: REDIS_URL
-        fromKeyvalue:
+        fromService:
+          type: keyvalue
           name: robean-redis
           property: connectionString
 
@@ -26,7 +27,8 @@ services:
       - key: DATABASE_URL
         sync: false
       - key: REDIS_URL
-        fromKeyvalue:
+        fromService:
+          type: keyvalue
           name: robean-redis
           property: connectionString
 
@@ -42,11 +44,15 @@ services:
       - key: DATABASE_URL
         sync: false
       - key: REDIS_URL
-        fromKeyvalue:
+        fromService:
+          type: keyvalue
           name: robean-redis
           property: connectionString
 
-keyvalue:
-  - name: robean-redis
+  # 4. Redis (Key Value) Service
+  - type: keyvalue
+    name: robean-redis
     plan: free
-    ipAllowList: []
+    ipAllowList:
+      - source: 0.0.0.0/0
+        description: everywhere
