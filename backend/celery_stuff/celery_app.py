@@ -5,10 +5,12 @@ from .config import beat_schedule, timezone
 from scripts.seed_stores import main as seed_stores_main
 import os
 
+redis_url = os.getenv("REDIS_URL") or os.getenv("CELERY_BROKER_URL") or "redis://localhost:6379/0"
+
 celery = Celery(
     "robean",
-    broker=os.environ.get("CELERY_BROKER_URL", "redis://redis:6379/0"),
-    backend=os.environ.get("CELERY_RESULT_BACKEND", "redis://redis:6379/0")
+    broker=redis_url,
+    backend=redis_url
 )
 
 celery.conf.beat_schedule = beat_schedule
