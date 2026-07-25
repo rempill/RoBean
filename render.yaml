@@ -1,5 +1,5 @@
 services:
-  # 1. FastAPI Web Backend
+  # Single Web Service running FastAPI + Celery
   - type: web
     name: robean-backend
     env: docker
@@ -15,41 +15,7 @@ services:
           name: robean-redis
           property: connectionString
 
-  # 2. Celery Worker (Runs Scrapers)
-  - type: worker
-    name: robean-celery-worker
-    env: docker
-    dockerfilePath: ./backend/Dockerfile
-    dockerContext: ./backend
-    dockerCommand: celery -A celery_stuff.celery_app:celery worker --loglevel=info --pool=threads
-    plan: free
-    envVars:
-      - key: DATABASE_URL
-        sync: false
-      - key: REDIS_URL
-        fromService:
-          type: keyvalue
-          name: robean-redis
-          property: connectionString
-
-  # 3. Celery Beat (Scheduler)
-  - type: worker
-    name: robean-celery-beat
-    env: docker
-    dockerfilePath: ./backend/Dockerfile
-    dockerContext: ./backend
-    dockerCommand: celery -A celery_stuff.celery_app:celery beat --loglevel=info
-    plan: free
-    envVars:
-      - key: DATABASE_URL
-        sync: false
-      - key: REDIS_URL
-        fromService:
-          type: keyvalue
-          name: robean-redis
-          property: connectionString
-
-  # 4. Redis (Key Value) Service
+  # Redis instance
   - type: keyvalue
     name: robean-redis
     plan: free
