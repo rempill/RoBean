@@ -19,5 +19,6 @@ export interface Bean {
   name: string;
   url: string;
   imageUrl: string;
+  first_seen_at: string;
   variants: Variant[];
 }

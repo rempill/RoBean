@@ -18,6 +18,7 @@ class CoffeeBeanOut(BaseModel):
     image: str | None = None
     variants: list[VariantOut]
     updated_at: datetime
+    first_seen_at: datetime
 
 
 class StoreOut(BaseModel):

@@ -12,6 +12,15 @@ const getLowestPriceVariant = (variants: Variant[]): Variant | null => {
   );
 };
 
+const isFreshDrop = (dateString?: string) => {
+  if (!dateString) return false;
+  const date = new Date(dateString);
+  const now = Date.now();
+  const diffDays = (now - date.getTime()) / (1000 * 60 * 60 * 24);
+  return diffDays <= 7;
+};
+
+
 export function CoffeeCard({ bean }: CoffeeCardProps) {
   const lowestPriceVariant = getLowestPriceVariant(bean.variants);
 
@@ -44,6 +53,12 @@ export function CoffeeCard({ bean }: CoffeeCardProps) {
         ) : (
           <div className="h-full w-full bg-gradient-to-br from-muted to-background flex items-center justify-center">
             <span className="text-sm text-muted-foreground">No image</span>
+          </div>
+        )}
+        
+        {isFreshDrop(bean.first_seen_at) && (
+          <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-bl-lg uppercase tracking-wider shadow-md animate-pulse z-10">
+            New
           </div>
         )}
       </div>
