@@ -30,6 +30,7 @@ function App() {
                                 name: bean.name,
                                 url: bean.url,
                                 imageUrl: bean.image || bean.imageUrl,
+                                first_seen_at: bean.first_seen_at,
                                 variants: (bean.variants || []).map((v: any) => ({
                                     id: v.id,
                                     weightGrams: v.weight_grams || v.weightGrams,
