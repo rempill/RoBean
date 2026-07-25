@@ -108,7 +108,8 @@ async def run_all_scrapers() -> None:
             return
         for store in stores:
             await scrape_store(store, db)
-        await db.commit()
+            await db.commit()
+
 
 
 async def main() -> None:
