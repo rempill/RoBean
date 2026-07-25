@@ -1,0 +1,52 @@
+services:
+  # 1. FastAPI Web Backend
+  - type: web
+    name: robean-backend
+    env: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        sync: false # Tells Render to prompt you for this value in the dashboard
+      - key: REDIS_URL
+        fromKeyvalue:
+          name: robean-redis
+          property: connectionString
+
+  # 2. Celery Worker (Runs Scrapers)
+  - type: worker
+    name: robean-celery-worker
+    env: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    dockerCommand: celery -A celery_stuff.celery_app:celery worker --loglevel=info --pool=threads
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: REDIS_URL
+        fromKeyvalue:
+          name: robean-redis
+          property: connectionString
+
+  # 3. Celery Beat (Scheduler)
+  - type: worker
+    name: robean-celery-beat
+    env: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    dockerCommand: celery -A celery_stuff.celery_app:celery beat --loglevel=info
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: REDIS_URL
+        fromKeyvalue:
+          name: robean-redis
+          property: connectionString
+
+keyvalue:
+  - name: robean-redis
+    plan: free
+    ipAllowList: []
