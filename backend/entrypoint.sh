@@ -1,4 +1,6 @@
 #!/bin/sh
+echo "Initializing database..."
+python -c "import asyncio; from db.database import init_db; asyncio.run(init_db())"
 echo "Running database migrations..."
 alembic upgrade head
 celery -A celery_stuff.celery_app:celery worker --loglevel=info --pool=threads &
