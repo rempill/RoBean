@@ -1,12 +1,12 @@
-import asyncio
+import logging
 from urllib.parse import urlparse
-import httpx
+from curl_cffi.requests import AsyncSession
+
+logger = logging.getLogger(__name__)
 
 DEFAULT_HEADERS = {
-    # 1. Stops Python from identifying itself as a bot
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
-    # 2. Tells Shopify/WP you want JSON, not an HTML page
-    "Accept": "application/json, text/plain, */*",
+    "Accept": "application/json, text/html, */*",
 }
 
 
@@ -24,9 +24,14 @@ def get_headers_for_url(url: str, custom_headers: dict | None = None) -> dict:
 
 async def get_response(url: str, headers: dict | None = None) -> str | None:
     req_headers = get_headers_for_url(url, headers)
-    async with httpx.AsyncClient(timeout=20, follow_redirects=True) as client:
-        response = await client.get(url, headers=req_headers)
-    if response.status_code != 200:
-        print(f"Failed to retrieve page: {response.status_code}")
+    try:
+        async with AsyncSession(impersonate="chrome") as session:
+            response = await session.get(url, headers=req_headers, timeout=20, follow_redirects=True)
+            if response.status_code != 200:
+                logger.warning(f"HTTP error {response.status_code} for URL: {url}")
+                return None
+            return response.text
+    except Exception as e:
+        logger.error(f"Network error fetching URL {url}: {e}")
         return None
-    return response.text
+

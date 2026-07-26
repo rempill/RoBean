@@ -169,38 +169,42 @@ def _find_next_page_url(html: str) -> Optional[str]:
 
 async def scrape_yume_store(max_pages: int = 10) -> list[ScrapedBean]:
     """Scrape Yume shop page(s) and return ScrapedBean models."""
+    try:
+        url = SHOP_URL
+        all_beans_by_key: dict[tuple[str, str], ScrapedBean] = {}
 
-    url = SHOP_URL
-    all_beans_by_key: dict[tuple[str, str], ScrapedBean] = {}
+        for _ in range(max_pages):
+            html = await get_response(url)
+            if not html:
+                break
 
-    for _ in range(max_pages):
-        html = await get_response(url)
-        if not html:
-            break
+            beans = _parse_products_from_html(html)
+            for bean in beans:
+                normalized_name = _clean_bean_name(bean.name)
+                key = (normalized_name.lower(), bean.store_name)
 
-        beans = _parse_products_from_html(html)
-        for bean in beans:
-            normalized_name = _clean_bean_name(bean.name)
-            key = (normalized_name.lower(), bean.store_name)
+                if key in all_beans_by_key:
+                    existing = all_beans_by_key[key]
+                    existing.variants.extend(bean.variants)
+                    existing.variants = sorted(
+                        {v.weight_grams: v for v in existing.variants}.values(), key=lambda v: v.weight_grams
+                    )
+                    if not existing.image_url and bean.image_url:
+                        existing.image_url = bean.image_url
+                else:
+                    bean.name = normalized_name
+                    all_beans_by_key[key] = bean
 
-            if key in all_beans_by_key:
-                existing = all_beans_by_key[key]
-                existing.variants.extend(bean.variants)
-                existing.variants = sorted(
-                    {v.weight_grams: v for v in existing.variants}.values(), key=lambda v: v.weight_grams
-                )
-                if not existing.image_url and bean.image_url:
-                    existing.image_url = bean.image_url
-            else:
-                bean.name = normalized_name
-                all_beans_by_key[key] = bean
+            next_url = _find_next_page_url(html)
+            if not next_url or next_url == url:
+                break
+            url = next_url
 
-        next_url = _find_next_page_url(html)
-        if not next_url or next_url == url:
-            break
-        url = next_url
+        return list(all_beans_by_key.values())
+    except Exception as exc:
+        logging.getLogger(__name__).error(f"Unhandled error while scraping Yume ({SHOP_URL}): {exc}", exc_info=True)
+        return []
 
-    return list(all_beans_by_key.values())
 
 
 if __name__ == "__main__":

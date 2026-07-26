@@ -17,7 +17,7 @@ async def get_side_effect(url,*args, **kwargs):
             return MockResponse(f.read())
     return MockResponse("")
 
-@patch("httpx.AsyncClient.get", new_callable=AsyncMock)
+@patch("curl_cffi.requests.AsyncSession.get", new_callable=AsyncMock)
 def test_scrape_meron_store(mock_get):
     mock_get.side_effect=get_side_effect
     beans=asyncio.run(SCRAPERS["Meron"]())
