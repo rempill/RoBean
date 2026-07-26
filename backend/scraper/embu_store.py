@@ -8,7 +8,7 @@ from scraper.utils import get_response
 
 logger = logging.getLogger(__name__)
 
-EMBU_STORE_NAME = "Embu Coffee"
+EMBU_STORE_NAME = "Embu"
 EMBU_API_URL = "https://embu-coffee.ro/collections/all/products.json"
 
 
