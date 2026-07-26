@@ -26,7 +26,7 @@ async def get_response(url: str, headers: dict | None = None) -> str | None:
     req_headers = get_headers_for_url(url, headers)
     try:
         async with AsyncSession(impersonate="chrome") as session:
-            response = await session.get(url, headers=req_headers, timeout=20, follow_redirects=True)
+            response = await session.get(url, headers=req_headers, timeout=20, allow_redirects=True)
             if response.status_code != 200:
                 logger.warning(f"HTTP error {response.status_code} for URL: {url}")
                 return None
@@ -34,4 +34,4 @@ async def get_response(url: str, headers: dict | None = None) -> str | None:
     except Exception as e:
         logger.error(f"Network error fetching URL {url}: {e}")
         return None
-
+
