@@ -1,90 +1,135 @@
 import asyncio
-
+import json
+import logging
+import re
 from pydantic import HttpUrl
 
 from scraper.schemas import ScrapedBean
 from scraper.utils import get_response
-import json
-import re
+
+logger = logging.getLogger(__name__)
+
+MERON_STORE_NAME = "Meron"
+MERON_API_URL = "https://meron.ro/wp-json/wc/store/products?category=cafea&per_page=100"
 
 # Matches patterns like "250g", "1kg", "500 gr" (case-insensitive)
 WEIGHT_PATTERN = re.compile(r"(\d+)\s*(kg|g|gr)", re.IGNORECASE)
 
-def extract_grams(text:str)-> int:
+
+def extract_grams(text: str | None) -> int:
     if not text:
         return 0
-    match=WEIGHT_PATTERN.search(text)
+    match = WEIGHT_PATTERN.search(text)
     if not match:
         return 0
-    value,unit=match.groups()
-    value=int(value)
-    return value*1000 if unit.lower()=="kg" else value
+    value, unit = match.groups()
+    value = int(value)
+    return value * 1000 if unit.lower() == "kg" else value
 
-async def parse_meron_product(product):
-    full_name = product["name"]
 
-    excluded_keywords=["Gift Card", "Box", "Meron"]
-    if any(word in full_name for word in excluded_keywords) or product.get("type")=="pw-gift-card":
+async def parse_meron_product(product: dict) -> ScrapedBean | None:
+    if not isinstance(product, dict):
         return None
 
-    description = product.get("description", "")
+    full_name = product.get("name")
+    if not full_name:
+        return None
+
+    excluded_keywords = ["Gift Card", "Box", "Meron"]
+    if any(word in full_name for word in excluded_keywords) or product.get("type") == "pw-gift-card":
+        return None
+
+    description = product.get("description", "") or ""
 
     # Remove noise and take part before '|' if exists
     name_part = full_name.split("|")[0].strip()
     clean_name = re.sub(r"\s+\d+(g|kg|gr).*$", "", name_part, flags=re.IGNORECASE).strip()
     clean_name = clean_name.replace(" &#8211;", "").replace(" House", "").strip()
-
-    # Extract grams, fallback to description if not found in name
-    grams=extract_grams(full_name) or extract_grams(description)
-
-    if grams==0:
-        print(f"Skipping non-coffee or unknown weight: {full_name}")
+    if not clean_name:
         return None
 
+    # Extract grams, fallback to description if not found in name
+    grams = extract_grams(full_name) or extract_grams(description)
+
+    if grams <= 0:
+        logger.debug(f"Skipping non-coffee or unknown weight: {full_name}")
+        return None
+
+    prices = product.get("prices")
+    if not isinstance(prices, dict) or "price" not in prices or prices["price"] is None:
+        logger.debug(f"Missing price dictionary for product: {full_name}")
+        return None
+
+    permalink = product.get("permalink")
+    if not permalink:
+        logger.debug(f"Missing permalink for product: {full_name}")
+        return None
+
+    images = product.get("images", [])
+    image_src = images[0].get("src") if isinstance(images, list) and images and isinstance(images[0], dict) else None
+
     try:
-        price=round(float(product["prices"]["price"])/100, 2)
-        price_per_gram=round(price/grams, 3)
-        url=HttpUrl(product["permalink"])
-        image=HttpUrl(product["images"][0]["src"]) if product["images"] else None
+        raw_price = float(prices["price"])
+        price = round(raw_price / 100, 2)
+        if price <= 0:
+            return None
+        price_per_gram = round(price / grams, 3)
+
         return ScrapedBean(
             name=clean_name,
-            store_name="Meron",
-            url=url,
-            image_url=image,
+            store_name=MERON_STORE_NAME,
+            url=HttpUrl(permalink),
+            image_url=HttpUrl(image_src) if image_src else None,
             variants=[{
                 "weight_grams": grams,
                 "price": price,
-                "price_per_gram": price_per_gram
-            }]
+                "price_per_gram": price_per_gram,
+            }],
         )
-    except (ValueError,KeyError,ZeroDivisionError):
-        print(f"Invalid price for product: {full_name}")
+    except (ValueError, TypeError, ZeroDivisionError) as e:
+        logger.debug(f"Invalid price or url data for product '{full_name}': {e}")
         return None
 
 
-async def scrape_meron_store():
-    meron_api = "https://meron.ro/wp-json/wc/store/products?category=cafea&per_page=100"
-    response_text = await get_response(meron_api)
-    if not response_text:
-        return []
+async def scrape_meron_store() -> list[ScrapedBean]:
     try:
-        products = json.loads(response_text)
-    except json.JSONDecodeError:
-        print("Failed to parse JSON response from Meron")
+        response_text = await get_response(MERON_API_URL)
+        if not response_text:
+            logger.warning(f"Empty or failed response from {MERON_STORE_NAME} at {MERON_API_URL}")
+            return []
+
+        try:
+            products = json.loads(response_text)
+        except (json.JSONDecodeError, TypeError) as e:
+            logger.error(f"Failed to parse JSON response from {MERON_STORE_NAME} at {MERON_API_URL}: {e}")
+            return []
+
+        if not isinstance(products, list):
+            logger.warning(f"Unexpected JSON root type from {MERON_STORE_NAME}: expected list, got {type(products).__name__}")
+            return []
+
+        beans: dict[str, ScrapedBean] = {}
+
+        for product in products:
+            bean = await parse_meron_product(product)
+            if not bean:
+                continue
+            # Grouping by name to handle different bag sizes
+            if bean.name in beans:
+                beans[bean.name].variants.extend(bean.variants)
+                search_query = bean.name.replace(" ", "+")
+                beans[bean.name].url = HttpUrl(f"https://meron.ro/?s={search_query}&post_type=product")
+            else:
+                beans[bean.name] = bean
+
+        return list(beans.values())
+
+    except Exception as exc:
+        logger.error(f"Unhandled error while scraping {MERON_STORE_NAME} ({MERON_API_URL}): {exc}", exc_info=True)
         return []
 
-    beans = {}
 
-    for product in products:
-        bean=await parse_meron_product(product)
-        if not bean:
-            continue
-        # Grouping by name to handle different bag sizes
-        if bean.name in beans:
-            beans[bean.name].variants.extend(bean.variants)
-            # If multiple sizes exist, update URL to a search result for better UX
-            search_query=bean.name.replace(" ","+")
-            beans[bean.name].url = f"https://meron.ro/?s={search_query}&post_type=product"
-        else:
-            beans[bean.name] = bean
-    return list(beans.values())
+if __name__ == "__main__":
+    beans = asyncio.run(scrape_meron_store())
+    for bean in beans:
+        print(bean)
