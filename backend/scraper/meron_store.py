@@ -1,6 +1,7 @@
 import asyncio
 import json
 import logging
+import os
 import re
 from pydantic import HttpUrl
 
@@ -11,6 +12,8 @@ logger = logging.getLogger(__name__)
 
 MERON_STORE_NAME = "Meron"
 MERON_API_URL = "https://meron.ro/wp-json/wc/store/products?category=cafea&per_page=100"
+SCRAPENINJA_API_URL = "https://scrapeninja.apiroad.net/scrape"
+SCRAPENINJA_API_KEY = os.getenv("SCRAPENINJA_API_KEY", "")
 
 # Matches patterns like "250g", "1kg", "500 gr" (case-insensitive)
 WEIGHT_PATTERN = re.compile(r"(\d+)\s*(kg|g|gr)", re.IGNORECASE)
@@ -92,16 +95,48 @@ async def parse_meron_product(product: dict) -> ScrapedBean | None:
 
 
 async def scrape_meron_store() -> list[ScrapedBean]:
+    if not SCRAPENINJA_API_KEY:
+        logger.error(f"SCRAPENINJA_API_KEY environment variable is missing for {MERON_STORE_NAME}")
+        return []
+
     try:
-        response_text = await get_response(MERON_API_URL)
-        if not response_text:
-            logger.warning(f"Empty or failed response from {MERON_STORE_NAME} at {MERON_API_URL}")
+        payload = {
+            "url": MERON_API_URL,
+            "headers": [
+                "Accept: application/json",
+                "Referer: https://meron.ro/",
+            ],
+        }
+        headers = {
+            "x-apiroad-key": SCRAPENINJA_API_KEY,
+            "Content-Type": "application/json",
+        }
+
+        from curl_cffi.requests import AsyncSession
+
+        async with AsyncSession(impersonate="chrome") as session:
+            response = await session.post(
+                SCRAPENINJA_API_URL,
+                json=payload,
+                headers=headers,
+                timeout=20,
+            )
+
+        if response.status_code != 200:
+            logger.error(
+                f"ScrapeNinja proxy API returned non-200 status code {response.status_code} for {MERON_STORE_NAME}"
+            )
             return []
 
         try:
-            products = json.loads(response_text)
-        except (json.JSONDecodeError, TypeError) as e:
-            logger.error(f"Failed to parse JSON response from {MERON_STORE_NAME} at {MERON_API_URL}: {e}")
+            proxy_data = response.json()
+            raw_body = proxy_data.get("body")
+            if not raw_body:
+                logger.error(f"ScrapeNinja response body is missing or empty for {MERON_STORE_NAME}")
+                return []
+            products = json.loads(raw_body)
+        except (json.JSONDecodeError, TypeError, KeyError) as e:
+            logger.error(f"Failed to parse JSON response from ScrapeNinja for {MERON_STORE_NAME}: {e}")
             return []
 
         if not isinstance(products, list):
@@ -125,7 +160,7 @@ async def scrape_meron_store() -> list[ScrapedBean]:
         return list(beans.values())
 
     except Exception as exc:
-        logger.error(f"Unhandled error while scraping {MERON_STORE_NAME} ({MERON_API_URL}): {exc}", exc_info=True)
+        logger.error(f"Unhandled error while scraping {MERON_STORE_NAME} via ScrapeNinja proxy ({MERON_API_URL}): {exc}", exc_info=True)
         return []
 
 
